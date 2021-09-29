@@ -10,9 +10,24 @@ body{
   margin: 0;
 }
 
-.btn-custom {
+/* button style for search */
+.btn-search {
   border: solid black 2px;
   border-radius: .25rem;
   font-size: 3rem;
   font-weight: bold;
+}
+
+/* button style for form */
+.btn-form{
+  border: solid black 2px;
+  border-radius: .25rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* input style */
+input{
+  border: solid black 2px;
+  border-radius: .25rem;
 }
