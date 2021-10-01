@@ -30,4 +30,14 @@ body{
 input{
   border: solid black 2px;
   border-radius: .25rem;
+  padding: 1%;
+}
+
+/* styles for all the labels for the buttons */
+.labels{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+  width: 100%;
 }
