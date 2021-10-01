@@ -1,71 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-SUA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-SUA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Munchies & Movies</title>
     <!-- tailwind style sheet -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css"
-    integrity="sha512-5D0ofs3AsWoKsspH9kCWlY7qGxnHvdN/Yz2rTNwD9L271Mno85s+5ERo03qk9SUNtdgOZ4A9t8kRDexkvnWByA=="
-    crossorigin="anonymous" 
-    referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css" integrity="sha512-5D0ofs3AsWoKsspH9kCWlY7qGxnHvdN/Yz2rTNwD9L271Mno85s+5ERo03qk9SUNtdgOZ4A9t8kRDexkvnWByA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- custom css style sheet -->
-    <link href="./assets/css/style.css" rel="stylesheet">
-</head>
-<body class="font-serif">
+    <link href="./assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body class="font-serif">
     <header class="flex justify-center p-3 mb-2">
-        <!-- header -->
-        <h1 class="text-6xl font-bold">Munchies & Movies</h1>
-        <!-- page info? -->
-        <p></p>
+      <!-- header -->
+      <h1 class="text-4xl md:text-6xl font-bold">Munchies & Movies</h1>
+      <!-- page info? -->
+      <p></p>
     </header>
     <main>
-
-        <!-- grid for restaurants and movies -->
-        <div class="grid grid-cols-2 mb-10 p-4 justify-items-center">
-            <!-- restaurants -->
-            <div class="grid grid-rows-3 w-3/4 h-3/4">
-                <h3 class="text-center text-3xl">Restaurants</h3>
-                <!-- placeholder text maybe have an explanation here -->
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, molestias. Saepe, molestias ullam quisquam culpa ea, explicabo quia eos libero sit nisi eligendi eveniet cumque iure, ab doloremque reiciendis itaque?</p>
-                <!-- form for restaurant search -->
-                <form class="grid grid-rows-6">
-                    <label for="">placerholder</label>
-                    <input type="text" id="" name="" class="input">
-                    <label for="">placerholder</label>
-                    <input type="text" id="" name="">
-                    <label for="">placerholder</label>
-                    <input type="text" id="" name="">
-
-                </form>
-            </div>
-            <!-- movie selection -->
-            <div class=" grid grid-rows-3 w-3/4 h-3/4">
-                <h3 class="text-center text-3xl">Movies</h3>
-                <!-- placeholder text maybe have an explanation here -->
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, suscipit modi ullam, autem dicta nemo sint ducimus blanditiis totam necessitatibus fugiat aut odio! Minima praesentium fugit quidem temporibus repellendus inventore.</p>
-                <!-- form for movie search -->
-                <form class="grid grid-rows-6">
-                    <label for="">placerholder</label>
-                    <input type="text" id="" name="" class="input">
-                    <label for="">placerholder</label>
-                    <input type="text" id="" name="">
-                    <label for="">placerholder</label>
-                    <input type="text" id="" name="">
-
-                </form>
-            </div>
+      <!-- grid for restaurants and movies-->
+      <!-- small media = 1 column, medium+ = 2 columns-->
+      <div class="grid grid-cols-1 md:grid-cols-2 mb-10 p-4 justify-items-center">
+        <!-- restaurants -->
+        <div class="grid grid-rows-3 w-3/4 h-3/4">
+          <h3 class="text-center text-3xl">Restaurants</h3>
+          <!-- form for restaurant search -->
+          <form class="grid grid-rows-6">
+            <label for="">placerholder</label>
+            <input type="text" id="" name="" class="input" />
+            <label for="">placerholder</label>
+            <input type="text" id="" name="" />
+            <label for="">placerholder</label>
+            <input type="text" id="" name="" />
+          </form>
+          <!-- placeholder text maybe have an explanation here -->
+          <p class="pt-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, molestias. Saepe, molestias ullam quisquam culpa ea, explicabo quia eos libero sit nisi eligendi eveniet cumque iure, ab doloremque reiciendis itaque?</p>
         </div>
-
-        <!-- search button -->
-        <div class="flex justify-center pb-20">
-                <button class="btn-search bg-blue-300 w-1/3">Search</button>
+        <!-- movie selection -->
+        <div class="grid grid-rows-3 w-3/4 h-3/4">
+          <h3 class="text-center text-3xl">Movies</h3>
+          <!-- form for movie search -->
+          <form class="grid grid-rows-6">
+            <label for="">placerholder</label>
+            <input type="text" id="" name="" class="input" />
+            <label for="">placerholder</label>
+            <input type="text" id="" name="" />
+            <label for="">placerholder</label>
+            <input type="text" id="" name="" />
+          </form>
+          <!-- placeholder text maybe have an explanation here -->
+          <p class="pt-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, suscipit modi ullam, autem dicta nemo sint ducimus blanditiis totam necessitatibus fugiat aut odio! Minima praesentium fugit quidem temporibus repellendus inventore.</p>
         </div>
+      </div>
 
+      <!-- search button -->
+      <div class="flex justify-center pb-20">
+        <button class="btn-search bg-blue-300 w-1/3">Search</button>
+      </div>
     </main>
     <!-- javascript link -->
     <script src="./assets/script/script.js"></script>
-</body>
+  </body>
 </html>
