@@ -8,6 +8,7 @@
     <!-- tailwind style sheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css" integrity="sha512-5D0ofs3AsWoKsspH9kCWlY7qGxnHvdN/Yz2rTNwD9L271Mno85s+5ERo03qk9SUNtdgOZ4A9t8kRDexkvnWByA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- custom css style sheet -->
+<<<<<<< HEAD
     <link href="./assets/css/style.css" rel="stylesheet" />
   </head>
   <body class="font-serif">
@@ -25,16 +26,94 @@
         <div class="grid grid-rows-3 w-3/4 h-3/4">
           <h3 class="text-center text-3xl">Restaurants</h3>
           <!-- form for restaurant search -->
-          <form class="grid grid-rows-6">
-            <label for="">placerholder</label>
-            <input type="text" id="" name="" class="input" />
-            <label for="">placerholder</label>
-            <input type="text" id="" name="" />
-            <label for="">placerholder</label>
-            <input type="text" id="" name="" />
-          </form>
+          <label for="zipCode" class="labels">Zip Code</label>
+                        <input type="text" id="" name="zipCode">
+                        <label for="cuisine" class="labels">Cuisine</label>
+                        <input type="text" id="" name="cuisine">
           <!-- placeholder text maybe have an explanation here -->
-          <p class="pt-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, molestias. Saepe, molestias ullam quisquam culpa ea, explicabo quia eos libero sit nisi eligendi eveniet cumque iure, ab doloremque reiciendis itaque?</p>
+          <p class="text-center text-lg">
+            Search for Restaurants in your local area!
+            <br/>
+            Just enter your zip code, the cuisine you
+            would like to eat at and click the search button
+            below!
+            <br/>
+            Don't forget to search a Movie as well.
+        </p>
+=======
+    <link href="./assets/css/style.css" rel="stylesheet">
+</head>
+<body class="font-serif">
+    <header class="grid grid-rows p-3 mb-2">
+        <!-- header -->
+        <h1 class="text-6xl font-bold text-center">Munchies & Movies</h1>
+        <!-- page info? -->
+        <p class="text-center text-xl">
+            Welcome to Movies and Munchies. 
+            <br/>
+            The perfect web app for a quick date night
+        </p>
+    </header>
+    <main>
+
+        <!-- grid for restaurants and movies -->
+        <div class="grid grid-cols-2 p-4 mb-20 justify-items-center h-1/4">
+            <!-- restaurants -->
+            <div class="grid grid-rows w-3/4 h-full">
+                <div class="mb-5">
+                    <h3 class="text-center text-3xl">Restaurants</h3>
+                </div>
+                <div class="grid grid-rows h-full">
+                    <div class="mb-5"> 
+                        <!-- placeholder text maybe have an explanation here -->
+                        <p class="text-center text-lg">
+                            Search for Restaurants in your local area!
+                            <br/>
+                            Just enter your zip code, the cuisine you
+                            would like to eat at and click the search button
+                            below!
+                            <br/>
+                            Don't forget to search a Movie as well.
+                        </p>
+                    </div>
+                    <!-- form for restaurant search -->
+                    <form class="grid grid-rows">
+                        
+                    </form>
+                </div>
+                
+            </div>
+            <!-- movie selection -->
+            <div class="grid grid-rows w-3/4 h-full">
+                <div class="mb-5"> 
+                    <h3 class="text-center text-3xl">Movies</h3>
+                </div>
+                <div class="grid grid-rows h-full">
+                    <div class="mb-5">
+                        <!-- placeholder text maybe have an explanation here -->
+                        <p class="text-center text-lg">
+                            Search for a Movie genre on all of your favorate
+                            streaming companys!
+                            <br/> 
+                            Just enter a genre and
+                            click the search button below!
+                            <br/>
+                            Don't forget to look for a Restaurant as well.
+                        </p>
+                    </div>
+                    <!-- form for restaurant search -->
+                    <form class="grid grid-rows">
+                        <label for="genre" class="labels">Genre</label>
+                        <input type="text" id="" name="genre">
+                        <label for="" class="labels">placerholder</label>
+                        <input type="text" id="" name="">
+                        <label for="" class="labels">placerholder</label>
+                        <input type="text" id="" name="">
+
+                    </form>
+                </div>
+            </div>
+>>>>>>> e854d963f8c4549543ca414593579709707434b9
         </div>
         <!-- movie selection -->
         <div class="grid grid-rows-3 w-3/4 h-3/4">
@@ -59,6 +138,7 @@
       </div>
     </main>
     <!-- javascript link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./assets/script/script.js"></script>
   </body>
 </html>
