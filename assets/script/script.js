@@ -1,4 +1,4 @@
-let documenuApiKey = "608aa86465403aca06660a0f7bdd1bc8"
+let documenuApiKey = "8545b0df8628258e2380d4b6f5d685a0"
 let resturauntZipCodeEntry = ""
 let resturauntCuisineEntry = ""
 
@@ -29,6 +29,7 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
             if (response.ok) {
                 console.log(response)
                 response.json().then(function(data) {
+                    displayResults(data)
                     console.log(data)
                 })
             } else {
@@ -60,6 +61,7 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
                 if (response.ok) {
                     console.log(response)
                     response.json().then(function(data) {
+                        displayResults(data)
                         console.log(data)
                     })
                 } else {
@@ -71,3 +73,19 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
             })
     }
 }
+
+const displayResults = function(data) {
+    for (let i = 0; i < data.data.length; i++) {
+        console.log(i)
+        console.log(data.data.length)
+    }
+}
+
+
+
+//</div> container
+//h3 resturaunt name
+//p address
+//a phone number
+//a website
+//</div>
