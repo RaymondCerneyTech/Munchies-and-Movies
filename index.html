@@ -29,11 +29,13 @@
 
         <!-- search button -->
         <div class="grid grid-rows justify-center mb-5">
+            <!-- div to hold button to search with -->
             <div class="flex justify-center mb-5">
                 <button id = "searchBtn" class="btn-search bg-blue-300
                 w-1/3">Search</button>
             </div>
 
+            <!-- div to hold description of page -->
             <div class="border-box">
                 <p class="text-center text-lg p-3">
                     Search for Restaurants in your local area!
@@ -54,15 +56,20 @@
                 </p>
 
             </div>
+
         </div>
 
         <!-- grid for restaurants and movies -->
         <div class="grid grid-cols-2 p-4 mb-20 justify-items-center h-1/4">
-            <!-- restaurants -->
+            <!-- div to hold restaurants header, form and div to display from
+            out put of fetch -->
             <div class="grid grid-rows w-10/12 h-11/12 p-3 border-box">
+                <!-- header -->
                 <div class="mb-2">
                     <h3 class="text-center text-3xl">Restaurants</h3>
                 </div>
+
+                <!-- form -->
                 <div class="grid grid-rows h-full">
                     <!-- form for restaurant search -->
                     <form class="grid grid-rows">
@@ -72,16 +79,24 @@
                         <input type="text" id="cuisine-entry" name="cuisine">
                     </form>
                 </div>
+
+                <!-- display -->
                 <div class="mb-2">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique officia culpa tempora impedit, dolore natus officiis consequuntur, sapiente quisquam maiores cum tenetur corporis nemo magnam! Sit alias corrupti molestias nisi.</p>
                 </div>
-                
+
             </div>
-            <!-- movie selection -->
+
+             <!-- div to hold movies header, form and div to display from
+            out put of fetch -->
+
             <div class="grid grid-rows w-10/12 h-11/12 p-3 border-box">
+                <!-- header -->
                 <div class="mb-2"> 
                     <h3 class="text-center text-3xl">Movies</h3>
                 </div>
+
+                <!-- form -->
                 <div class="grid grid-rows h-full mb-5">
         
                     <!-- form for restaurant search -->
@@ -93,13 +108,17 @@
                     </form>
                 </div>
                 
+                <!-- display -->
                 <div class="mb-2">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iure commodi suscipit perspiciatis ex doloremque laudantium, quia accusamus dolorem? Placeat perspiciatis quod distinctio, magni sed nesciunt? Voluptates natus facere sunt.</p>
                 </div>
+
             </div>
+
         </div>
 
     </main>
+    
     <!-- javascript link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./assets/script/script.js"></script>
