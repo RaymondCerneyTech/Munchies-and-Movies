@@ -49,7 +49,28 @@
                 <!-- form for movie search -->
                 <form class="grid grid-rows-6">
                     <label for="genre" class="labels">Genre</label>
-                    <input type="text" id="genre" name="genre">
+                    <select id="genre" name="genre">
+                        <option value="1">Biography</option>
+                        <option value="2">Film Noir</option>
+                        <option value="3">Game Show</option>
+                        <option value="4">Musical</option>
+                        <option value="5">Sport</option>
+                        <option value="6">Short Film</option>
+                        <option value="12">Adventure</option>
+                        <option value="14">Fantasy</option>
+                        <option value="16">Animation</option>
+                        <option value="18">Drama</option>
+                        <option value="27">Horror</option>
+                        <option value="28">Action</option>
+                        <option value="35">Comedy</option>
+                        <option value="36">History</option>
+                        <option value="37">Western</option>
+                        <option value="53">Thriller</option>
+                        <option value="80">Crime</option>
+                        <option value="99">Documentary</option>
+                        <option value="878">Sci-Fi</option>
+                        <option value="9648">Mystery</option>
+                        <option value="10749">Romance</option>
                     <label for="">Search Movie</label>
                     <input type="text" id="key-word" name="">
                     <label for="">placeholder</label>
@@ -61,7 +82,7 @@
 
         <!-- search button -->
         <div class="flex justify-center pb-20">
-                <button class="btn-search bg-blue-300 w-1/3">Search</button>
+                <button id="searchBtn" class="btn-search bg-blue-300 w-1/3">Search</button>
         </div>
 
     </main>
