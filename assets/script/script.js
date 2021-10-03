@@ -92,12 +92,3 @@ const displayResults = function(data) {
         }
     }
 }
-
-
-
-//</div> container
-//h3 resturaunt name
-//p address
-//a phone number
-//a website
-//</div>
