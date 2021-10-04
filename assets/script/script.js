@@ -1,4 +1,4 @@
-let documenuApiKey = "608aa86465403aca06660a0f7bdd1bc8"
+let documenuApiKey = "8545b0df8628258e2380d4b6f5d685a0"
 let resturauntZipCodeEntry = ""
 let resturauntCuisineEntry = ""
 
@@ -29,6 +29,7 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
             if (response.ok) {
                 console.log(response)
                 response.json().then(function(data) {
+                    displayResults(data)
                     console.log(data)
                 })
             } else {
@@ -60,6 +61,7 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
                 if (response.ok) {
                     console.log(response)
                     response.json().then(function(data) {
+                        displayResults(data)
                         console.log(data)
                     })
                 } else {
@@ -69,5 +71,24 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
             .catch(function(error) {
                 alert("Unable to connect to Github");
             })
+    }
+}
+
+const displayResults = function(data) {
+    $("#results-display").empty();
+    for (let i = 0; i < data.data.length; i++) {
+        $("#results-display").append($("<div id='restaurant-" + i + "' class='grid grid-rows mt-5 text-lg leading-8'></div>"))
+        $("#restaurant-" + i).append($("<h3 id='restaurant-name-" + i + "'>" + data.data[i].restaurant_name + "</h3>"))
+        $("#restaurant-" + i).append($("<p>" + data.data[i].address.formatted +"</p>"))
+        if (data.data[i].restaurant_website) {
+            $("#restaurant-" + i).append($("<a href='" + data.data[i].restaurant_website + "' target='_blank'>" + data.data[i].restaurant_website + "</a>"))
+        } else if (!data.data[i].restaurant_website) {
+            $("#restaurant-" + i).append($("<p>No Website Available</p>"))
+        }
+        if (data.data[i].restaurant_phone) {
+            $("#restaurant-" + i).append($("<a href= 'tel:" + data.data[i].restaurant_phone + "'>" + data.data[i].restaurant_phone +"</a>"))
+        } else if (!data.data[i].restaurant_phone) {
+            $("#restaurant-" + i).append($("<p>No Phone Number Available</p>"))
+        }
     }
 }
