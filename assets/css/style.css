@@ -62,4 +62,7 @@ select{
   font-family: inherit;
 }
 
-
+.movie-results-img{
+  height: 7.7em;
+  width: 5.1em;
+}

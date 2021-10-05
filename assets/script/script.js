@@ -14,14 +14,14 @@ $("#searchBtn").on("click", function() {
     movieServiceEntry = $("#service").val();
     movieKeyWordEntry = $("#key-word").val().trim();
     
-    //if statement to handle search
-    if (resturauntZipCodeEntry || resturauntCuisineEntry) {
-        //resturaunt API handler
-        documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
-    } else if (!resturauntZipCodeEntry || !resturauntCuisineEntry) {
-        //movie API handler
-        rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
-    }
+    // //if statement to handle search
+    // if (resturauntZipCodeEntry || resturauntCuisineEntry) {
+    //     //resturaunt API handler
+    //     documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
+    // } else if (!resturauntZipCodeEntry || !resturauntCuisineEntry) {
+    //     //movie API handler
+    //     rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
+    // }
     if (movieGenreEntry || movieServiceEntry || movieKeyWordEntry) {
         //movie API handler
         rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
@@ -152,7 +152,8 @@ const movieResults = function(data) {
     for (let i = 0; i < data.results.length; i++) {
         $("#movie-results").append($("<div id='movie-" + i + "' class='grid grid-rows mt-5 leading-8'></div"));
         $("#movie-" + i).append($("<h3 class='text-2xl' id='movie-name" + i + "'>" + data.results[i].title + "</h3>"));
-        $("#movie-" + i).append($("<p class='text-lg'>" + data.results[i].overview +"</p>"));
-        $("#movie-" + i).append($("<img src='" + data.results[i].posterURLs[92] + "'/>"));
+        $("#movie-" + i).append($("<div class='flex' id='movie-info-" + i + "'></div>"))
+        $("#movie-info-" + i).append($("<img class='movie-resualts-img' src='" + data.results[i].posterURLs[92] + "'/>"));
+        $("#movie-info-" + i).append($("<p class='text-lg'>" + data.results[i].overview +"</p>"));
     }
 }
