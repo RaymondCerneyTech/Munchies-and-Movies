@@ -1,12 +1,34 @@
 let documenuApiKey = "8545b0df8628258e2380d4b6f5d685a0"
 let resturauntZipCodeEntry = ""
 let resturauntCuisineEntry = ""
+let movieGenreEntry = ""
+let movieServiceEntry = ""
+let movieKeyWordEntry = ""
 
 //onclick event for search button
 $("#searchBtn").on("click", function() {
     resturauntZipCodeEntry = $("#zip-code-entry").val().trim();
     resturauntCuisineEntry = $("#cuisine-entry").val().trim();
-    documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
+
+    movieGenreEntry = $("#genre").val();
+    movieServiceEntry = $("#service").val();
+    movieKeyWordEntry = $("#key-word").val().trim();
+    
+    //if statement to handle search
+    if (resturauntZipCodeEntry || resturauntCuisineEntry) {
+        //resturaunt API handler
+        documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
+    } else if (!resturauntZipCodeEntry || !resturauntCuisineEntry) {
+        //movie API handler
+        rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
+    }
+    if (movieGenreEntry || movieServiceEntry || movieKeyWordEntry) {
+        //movie API handler
+        rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
+    } else if (!movieGenreEntry || !movieServiceEntry || !movieKeyWordEntry) {
+        //resturaunt API handler
+        documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
+    }
 })
 
 const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry) {
@@ -96,15 +118,6 @@ const displayResults = function(data) {
 // Values and Variables
 let rapidApiKey = "5d49265088msh6b983bed1315af1p14dfcbjsnaf5a9469ed5a"
 let rapidApiHost = "streaming-availability.p.rapidapi.com"
-
-// on click function to build Movie Streaming API call
-$('#searchBtn').on('click', function(){
-    var movieGenreEntry = $("#genre").val();
-    var movieServiceEntry =$("#service").val();
-    var movieKeyWordEntry = $("#key-word").val().trim();
-    rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
-})
-
 
 // call function for Movie Streaming API
 const rapidApiRequest = function(movieKeyWordEntry, movieServiceEntry, movieGenreEntry) {
