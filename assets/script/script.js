@@ -137,9 +137,9 @@ const rapidApiRequest = function(movieKeyWordEntry, movieServiceEntry, movieGenr
 const movieResults = function(data) {
     $("#movie-results").empty();
     for (let i = 0; i < data.results.length; i++) {
-        $("#movie-results").append($("<div id='movie-" + i + "' class='grid grid-rows mt-5 text-lg leading-8'></div"));
-        $("#movie-" + i).append($("<h3 id='movie-name" + i + "'>" + data.results[i].title + "</h3>"));
-        $("#movie-" + i).append($("<p>" + data.results[i].overview +"</p>"));
+        $("#movie-results").append($("<div id='movie-" + i + "' class='grid grid-rows mt-5 leading-8'></div"));
+        $("#movie-" + i).append($("<h3 class='text-2xl' id='movie-name" + i + "'>" + data.results[i].title + "</h3>"));
+        $("#movie-" + i).append($("<p class='text-lg'>" + data.results[i].overview +"</p>"));
         $("#movie-" + i).append($("<img src='" + data.results[i].posterURLs[92] + "'/>"));
     }
 }
