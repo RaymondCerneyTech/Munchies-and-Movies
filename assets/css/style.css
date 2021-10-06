@@ -11,6 +11,37 @@ body{
   margin: 0;
 }
 
+/* anchor tag styling */
+a{
+  color: red;
+  text-decoration: underline ;
+}
+
+/* Header's and Label font styling */
+h1,h2,h3,h4,h5,h6,label{
+  font-family: Bebas Neue, cursive, sans-serif;
+}
+
+/* select styling */
+select{
+  padding: 1%;
+  font-family: inherit;
+}
+
+/* input style */
+input{
+  border: solid black 2px;
+  border-radius: .25rem;
+  padding: 1%;
+}
+
+/* styling to img that is called with movie web api */
+.movie-results-img{
+  height: 138px;
+  width: 92px;
+  margin-right: 2%;
+}
+
 /* button style for search */
 .btn-search {
   border: solid black 2px;
@@ -32,12 +63,6 @@ body{
   border-radius: .25rem;
 
 }
-/* input style */
-input{
-  border: solid black 2px;
-  border-radius: .25rem;
-  padding: 1%;
-}
 
 /* styles for all the labels for the buttons */
 .labels{
@@ -46,20 +71,6 @@ input{
   margin-bottom: .5rem;
   margin-top: .5rem;
   width: 100%;
-}
-
-a{
-  color: red;
-  text-decoration: underline ;
-}
-
-h1,h2,h3,h4,h5,h6,label{
-  font-family: Bebas Neue, cursive, sans-serif;
-}
-
-select{
-  padding: 1%;
-  font-family: inherit;
 }
 
 .movie-results-img{

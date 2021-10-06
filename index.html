@@ -22,7 +22,7 @@
     <header class="grid grid-rows p-3 mb-2">
         <!-- header -->
         <h1 class="text-6xl font-bold text-center">Munchies & Movies</h1>
-        <!-- page info? -->
+        <!-- page intro -->
         <p class="text-center text-xl">
             Welcome to Movies and Munchies. 
             <br/>
@@ -59,7 +59,6 @@
                     for a movie or just for a restaurant
                 </p>
             </div>
-
         </div>
 
         <!-- grid for restaurants and movies -->
@@ -76,8 +75,10 @@
                 <div class="grid grid-rows">
                     <!-- form for restaurant search -->
                     <form class="grid grid-rows">
+                        <!-- text input for zip code -->
                         <label for="zipCode" class="labels">Zip Code</label>
                         <input type="text" id="zip-code-entry" name="zipCode">
+                        <!-- text input for cuisine -->
                         <label for="cuisine" class="labels">Cuisine</label>
                         <input type="text" id="cuisine-entry" name="cuisine">
                     </form>
@@ -99,13 +100,12 @@
 
                 <!-- form -->
                 <div class="grid grid-rows mb-5">
-        
                     <!-- form for restaurant search -->
                     <form class="grid grid-rows">
+                        <!-- text input for movie name search -->
                         <label for="genre" class="labels">Search Movie</label>
                         <input type="text" id="key-word" name="genre">
-                        <!-- <label for="" class="labels">Genre</label>
-                        <input type="text" id="" name=""> -->
+                        <!-- select for movie genre -->
                         <label for="" class="labels">Genre</label>
                         <select id="genre" name="genre" class="border-box">
                             <option value="" selected>Pick a genre or
@@ -133,6 +133,7 @@
                             <option value="10749">Romance</option>
                         </select>
 
+                        <!-- select for movie streaming service -->
                         <label for="services" class="labels">Service Select</label>
                         <select id="service" name="services" class="border-box">
                             <option value="" selected>Pick a streaming service</option>
@@ -153,7 +154,6 @@
                 <!-- display -->
                 <div id="movie-results" class="grid grid-rows">
                         
-                </div>
                 </div>
 
             </div>
