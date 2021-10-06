@@ -19,21 +19,21 @@
     <link href="./assets/css/style.css" rel="stylesheet">
 </head>
 <body >
-    <header class="grid grid-rows p-3 mb-2 mr-72 ml-72">
+    <header class="grid grid-rows p-3 mb-2 md:grid grid-rows p-3 mb-2 h-auto">
         <!-- header -->
-        <div class="title-box flex justify-between">
-          <div class="pl-14">
-            <img src="./assets/images/popcorn-reel.png" class="h-64 w-64"/>
+        <div class="title-box flex justify-center">
+          <div class="md:pr-14">
+            <img src="./assets/images/popcorn-reel.png" class="py-0 md:h-72 w-64 md:py-12"/>
           </div>
-          <div>
-            <h1 class="text-7xl font-bold text-center tracking-widest pt-7">Munchies<br/>&<br>Movies</h1>   
+          <div id="app-title">
+            <h1 class="text-5xl font-bold text-center md:text-7xl md:tracking-widest md:py-28">Munchies & Movies</h1>   
           </div>
-          <div class="pr-14">
-            <img src="./assets/images/smiley.png" class="h-64"/>
+          <div class="md:pl-14">
+            <img src="./assets/images/smiley.png" class="py-0 md:h-72 w-64 md:py-12"/>
           </div>
         </div>
         <!-- page info? -->
-        <p class="text-center font-bold text-xl pt-6">
+        <p id="welcome-text" class="text-center font-bold text-xl pt-6 tracking-wide">
             Welcome to Munchies & Movies. 
             <br/>
             The perfect web app for a quick date night
@@ -50,31 +50,30 @@
 
             <!-- div to hold description of page -->
             <div class="border-radius">
-                <p id="paragraph" class="text-center text-lg p-3">
-                    Search for Restaurants in your local area!
+                <p id="paragraph" class="text-center text-lg p-3 mr-12 ml-12 md:m-0">
+                    Search for resturaunts in your local area by entering a required
+                    zip code and an optional cuisine type.
                     <br/>
-                    Just enter your zip code, the cuisine you
-                    would like to eat at and click the search button
-                    below!
                     <br/>
-                    Don't forget to search a Movie as well.<br/>
-                    Search for a Movie genre on all of your favorate
-                    streaming companys!
-                    <br/> 
-                    Just enter a genre or movie you like,
-                    click the search button below!
+                    Search for a movie by choosing a required streaming platform and 
+                    an optional genre type and or key-word.
                     <br/>
-                    Or if you want you can also pick or choose to search just
-                    for a movie or just for a restaurant
+                    <br/>
+                    Once you have selected one or both options and have met the required
+                    criteria, click the search to generate results!
+                    <br/>
+                    <br/>
+                    Your last searched results will be saved to the page until you enter a new search
+                    so feel free to come back later!
                 </p>
             </div>
         </div>
 
         <!-- grid for restaurants and movies -->
-        <div class="flex grid grid-cols-2 w-full p-10 mb-20 justify-items-center ">
+        <div class="grid grid-cols-1 justify-items-center md:grid-cols-2">
             <!-- div to hold restaurants header, form and div to display from
             out put of fetch -->
-            <div class="w-10/12 p-3 h-auto div-search">
+            <div class="w-10/12 p-3 h-auto div-search mb-5 md:mb-0">
                 <!-- header -->
                 <div class="mb-2 rest-movie-boxes">
                     <h3 class="tracking-widest text-center text-4xl font-bold">Restaurants</h3>
@@ -109,7 +108,7 @@
                 </div>
 
                 <!-- form -->
-                <div class="grid grid-rows mb-5">
+                <div class="grid grid-rows">
                     <!-- form for movies search -->
                     <form class="grid grid-rows">
                         <!-- text input for movie name search -->
@@ -169,21 +168,21 @@
             </div>
            
         </div>
-        <div class="flex justify-around">
+        <div class="flex justify-around mt-5 mb-5">
             <div class="flex justify-start">
                 <div>
-                    <img src="./assets/images/pizza.png" class="h-64 "/>
+                    <img src="./assets/images/pizza.png" class=" h-32 w-32 md:h-64 md:w-64"/>
                 </div>
                 <div>
-                    <img src="./assets/images/cat-burger.png" class="h-64"/>
+                    <img src="./assets/images/cat-burger.png" class="h-32 w-32 md:h-64 md:w-64"/>
                 </div>
             </div>
             <div class="flex justify-end">
                 <div>
-                    <img src="./assets/images/cute-popcorn.png" class="h-64 "/>
+                    <img src="./assets/images/cute-popcorn.png" class="h-32 w-32 md:h-64 md:w-64"/>
                 </div>
                 <div>
-                    <img src="./assets/images/cute-popcorn2.png" class="h-64 "/>
+                    <img src="./assets/images/cute-popcorn2.png" class="h-32 w-32 md:h-64 md:w-64"/>
                 </div>
             </div>
         </div>

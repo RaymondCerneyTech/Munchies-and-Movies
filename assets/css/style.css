@@ -42,11 +42,6 @@ a{
   text-decoration: underline ;
 }
 
-/* Header's and Label font styling */
-h1,h2,h3,h4,h5,h6,label{
-  font-family: Bebas Neue, cursive, sans-serif;
-}
-
 /* select styling */
 select{
   border: solid black 2px;
@@ -131,19 +126,43 @@ input{
 }
 
 /* head styles */
-h1,h2,h3,h4,h5,h6,label{
+h1,h2,h3,h4,h5,h6,label,.search-button{
   font-family: Bebas Neue, cursive, sans-serif;
 }
 
+#welcome-text {
+  font-family: Bebas Neue, cursive, sans-serif;
+  font-size: 200%;
+}
+
+#app-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
-  padding-top: 20px;
+  height: fit-content;
 }
 
 h3 {
   color: var(--third-color);
 }
 
+<<<<<<< HEAD
 .error {
   margin-top: 2%;
   font-family: inherit;
+=======
+.error, .movie-error {
+  font-family: Bebas Neue, cursive, sans-serif;
+  font-size: x-large;
+  color: var(--third-color)
+>>>>>>> 1ec5118b79587d5b5136c16f47d1c688a318352a
+}
+
+@media screen and (min-width: 768px) {
+  .error {
+    margin-top: 50px;
+  }
 }
