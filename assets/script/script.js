@@ -57,23 +57,23 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
                     // console.log(data)
                 })
             } else {
-                $("#movie-results").empty();
+                $("#munchies-results").empty();
                 $("#munchies-results").append($("<p class='error'>"+ response.statusText +"</p>"))
             }
         })
         .catch(function(error) {
-            $("#movie-results").empty();
+            $("#munchies-results").empty();
             $("#munchies-results").append($("<p class='error'>Unable to connect to GitHub</p>"))
         })
     } 
     // if nothing is entered
     else if (!resturauntZipCodeEntry && !resturauntCuisineEntry) {
-        $("#movie-results").empty();
+        $("#munchies-results").empty();
         $("#munchies-results").append($("<p class='error'>You must atleast add a zip code!</p>"))
     } 
     // if no zip code is entered
     else if (!resturauntZipCodeEntry) {
-        $("#movie-results").empty();
+        $("#munchies-results").empty();
         $("#munchies-results").append($("<p class='error'>You must have a zip code!</p>"))
     } 
     //if no cuisine is entered
@@ -93,12 +93,12 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
                         // console.log(data)
                     })
                 } else {
-                    $("#movie-results").empty();
+                    $("#munchies-results").empty();
                     $("#munchies-results").append($("<p class='error'>"+ response.statusText +"</p>"))
                 }
             })
             .catch(function(error) {
-                $("#movie-results").empty();
+                $("#munchies-results").empty();
                 $("#munchies-results").append($("<p class='error'>Unable to connect to GitHub</p>"))
             })
     }
