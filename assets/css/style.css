@@ -36,11 +36,42 @@ input {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+/* anchor tag styling */
+a{
+  color: red;
+  text-decoration: underline ;
+}
+
+/* Header's and Label font styling */
+h1,h2,h3,h4,h5,h6,label{
+  font-family: Bebas Neue, cursive, sans-serif;
+}
+
+/* select styling */
+select{
+  padding: 1%;
+  font-family: inherit;
+}
+
+/* input style */
+input{
+  border: solid black 2px;
+  border-radius: .25rem;
+  padding: 1%;
+}
+
+/* styling to img that is called with movie web api */
+.movie-results-img{
+  height: 138px;
+  width: 92px;
+  margin-right: 2%;
+}
+
 /* button style for search */
 .search-button {
   border: solid var(--third-color);
   background-color: var(--first-color);
-  border-radius: 5px;
+  border-radius: 20px;
   font-size: 2.5rem;
   font-weight: bold;
 }
@@ -91,10 +122,6 @@ input{
   width: 100%;
 }
 
-a{
-  color: red;
-  text-decoration: underline ;
-}
 
 /* head styles */
 h1,h2,h3,h4,h5,h6,label{
