@@ -122,6 +122,11 @@ input{
   width: 100%;
 }
 
+.movie-results-img{
+  height: 138px;
+  width: 92px;
+  margin-right: 2%;
+}
 
 /* head styles */
 h1,h2,h3,h4,h5,h6,label{
@@ -134,4 +139,8 @@ h1 {
 
 h3 {
   color: var(--third-color);
+}
+
+.error {
+  font-family: inherit;
 }
