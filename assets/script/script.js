@@ -32,6 +32,7 @@ $("#searchBtn").on("click", function() {
     }
 })
 
+//api request for resturaunts
 const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry) {
     let documenuApiUrl = 
                     "https://api.documenu.com/v2/restaurants/zip_code/"
@@ -52,24 +53,28 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
             if (response.ok) {
                 // console.log(response)
                 response.json().then(function(data) {
-                    displayResults(data)
+                    munchiesResults(data)
                     // console.log(data)
                 })
             } else {
-                alert("Error: " + response.statusText)
+                $("#movie-results").empty();
+                $("#munchies-results").append($("<p class='error'>"+ response.statusText +"</p>"))
             }
         })
         .catch(function(error) {
-            alert("Unable to connect to Github");
+            $("#movie-results").empty();
+            $("#munchies-results").append($("<p class='error'>Unable to connect to GitHub</p>"))
         })
     } 
     // if nothing is entered
     else if (!resturauntZipCodeEntry && !resturauntCuisineEntry) {
-        alert("You must atleast add a zip code!")
+        $("#movie-results").empty();
+        $("#munchies-results").append($("<p class='error'>You must atleast add a zip code!</p>"))
     } 
     // if no zip code is entered
     else if (!resturauntZipCodeEntry) {
-        alert("You must have a zip code!")
+        $("#movie-results").empty();
+        $("#munchies-results").append($("<p class='error'>You must have a zip code!</p>"))
     } 
     //if no cuisine is entered
     else if (!resturauntCuisineEntry) {
@@ -84,23 +89,26 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
                 if (response.ok) {
                     // console.log(response)
                     response.json().then(function(data) {
-                        displayResults(data)
+                        munchiesResults(data)
                         // console.log(data)
                     })
                 } else {
-                    alert("Error: " + response.statusText)
+                    $("#movie-results").empty();
+                    $("#munchies-results").append($("<p class='error'>"+ response.statusText +"</p>"))
                 }
             })
             .catch(function(error) {
-                alert("Unable to connect to Github");
+                $("#movie-results").empty();
+                $("#munchies-results").append($("<p class='error'>Unable to connect to GitHub</p>"))
             })
     }
 }
 
-const displayResults = function(data) {
-    $("#results-display").empty();
+//function to display results and append to page
+const munchiesResults = function(data) {
+    $("#munchies-results").empty();
     for (let i = 0; i < data.data.length; i++) {
-        $("#results-display").append($("<div id='restaurant-" + i + "' class='grid grid-rows mt-5 text-lg leading-8'></div>"))
+        $("#munchies-results").append($("<div id='restaurant-" + i + "' class='grid grid-rows mt-5 text-lg leading-8'></div>"))
         $("#restaurant-" + i).append($("<h3 id='restaurant-name-" + i + "'>" + data.data[i].restaurant_name + "</h3>"))
         $("#restaurant-" + i).append($("<p>" + data.data[i].address.formatted +"</p>"))
         if (data.data[i].restaurant_website) {
@@ -144,7 +152,8 @@ const rapidApiRequest = function(movieKeyWordEntry, movieServiceEntry, movieGenr
                     movieResults(data);
                 });
             } else {
-                alert("Error: " + response.statusText)
+                $("#movie-results").empty();
+                $("#movie-results").append($("<p class='error'>" + response.statusText + "</p>"));
             }
         })    
         .catch(err => {
@@ -152,9 +161,11 @@ const rapidApiRequest = function(movieKeyWordEntry, movieServiceEntry, movieGenr
         });
     } else if (!movieGenreEntry && !movieServiceEntry && !movieKeyWordEntry) {
         console.log(movieGenreEntry, movieServiceEntry, movieKeyWordEntry)
-        alert("You must atleast add a streaming service!")
+        $("#movie-results").empty();
+        $("#movie-results").append($("<p class='error'>You must atleast add a streaming service!</p>"));
     } else if (!movieServiceEntry) {
-        alert("You must have a streaming service")
+        $("#movie-results").empty();
+        $("#movie-results").append($("<p class='error'>You must atleast add a streaming service!</p>"));
     } else if (!movieGenreEntry || !movieKeyWordEntry) {
         fetch(streamingApiUrl, {
             "method": "GET",
@@ -171,7 +182,8 @@ const rapidApiRequest = function(movieKeyWordEntry, movieServiceEntry, movieGenr
                     movieResults(data);
                 });
             } else {
-                alert("Error: " + response.statusText)
+                $("#movie-results").empty();
+                $("#movie-results").append($("<p class='error'>" + response.statusText + "</p>"));
             }
         })    
         .catch(err => {

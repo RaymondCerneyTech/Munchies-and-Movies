@@ -73,7 +73,12 @@ input{
   width: 100%;
 }
 
+.movie-results-img{
+  height: 138px;
+  width: 92px;
+  margin-right: 2%;
+}
 
-
-
-
+.error {
+  font-family: inherit;
+}
