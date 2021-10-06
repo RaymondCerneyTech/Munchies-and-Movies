@@ -14,7 +14,7 @@ $("#searchBtn").on("click", function() {
     movieServiceEntry = $("#service").val();
     movieKeyWordEntry = $("#key-word").val().trim();
     
-    // if statement to handle search
+    //if statement to handle search
     if (resturauntZipCodeEntry || resturauntCuisineEntry) {
         //resturaunt API handler
         documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
@@ -25,8 +25,7 @@ $("#searchBtn").on("click", function() {
     if (movieGenreEntry || movieServiceEntry || movieKeyWordEntry) {
         //movie API handler
         rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
-    } 
-    else if (!movieGenreEntry || !movieServiceEntry || !movieKeyWordEntry) {
+    } else if (!movieGenreEntry || !movieServiceEntry || !movieKeyWordEntry) {
         //resturaunt API handler
         documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
     }
@@ -48,12 +47,12 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
 
     fetch(documenuApiUrl)
         .then(function(response) {
-            // console.log(response)
+            console.log(response)
             if (response.ok) {
-                // console.log(response)
+                console.log(response)
                 response.json().then(function(data) {
                     displayResults(data)
-                    // console.log(data)
+                    console.log(data)
                 })
             } else {
                 alert("Error: " + response.statusText)
@@ -80,12 +79,12 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
     
         fetch(documenuApiUrl)
             .then(function(response) {
-                // console.log(response)
+                console.log(response)
                 if (response.ok) {
-                    // console.log(response)
+                    console.log(response)
                     response.json().then(function(data) {
                         displayResults(data)
-                        // console.log(data)
+                        console.log(data)
                     })
                 } else {
                     alert("Error: " + response.statusText)
@@ -128,57 +127,27 @@ const rapidApiRequest = function(movieKeyWordEntry, movieServiceEntry, movieGenr
         +"&genre=" + movieGenreEntry
         +"&keyword=" + movieKeyWordEntry
 
-    if (movieKeyWordEntry && movieServiceEntry && movieGenreEntry) {
-        fetch(streamingApiUrl, {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": rapidApiHost,
-                "x-rapidapi-key": rapidApiKey
-            }
-        })
+    fetch(streamingApiUrl, {
+	    "method": "GET",
+	    "headers": {
+		    "x-rapidapi-host": rapidApiHost,
+		    "x-rapidapi-key": rapidApiKey
+	    }
+    })
 
-        // handle results of Movie API call
-        .then(function(response){
-            if (response.ok) {
-                response.json().then(function(data){
-                    movieResults(data);
-                });
-            } else {
-                alert("Error: " + response.statusText)
-            }
-        })    
-        .catch(err => {
-            console.error(err);
-        });
-    } else if (!movieGenreEntry && !movieServiceEntry && !movieKeyWordEntry) {
-        console.log(movieGenreEntry, movieServiceEntry, movieKeyWordEntry)
-        alert("You must atleast add a streaming service!")
-    } else if (!movieServiceEntry) {
-        alert("You must have a streaming service")
-    } else if (!movieGenreEntry || !movieKeyWordEntry) {
-        fetch(streamingApiUrl, {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": rapidApiHost,
-                "x-rapidapi-key": rapidApiKey
-            }
-        })
-
-        // handle results of Movie API call
-        .then(function(response){
-            if (response.ok) {
-                response.json().then(function(data){
-                    movieResults(data);
-                });
-            } else {
-                alert("Error: " + response.statusText)
-            }
-        })    
-        .catch(err => {
-        console.error(err);
-        });
-    }
-} 
+    // handle results of Movie API call
+    .then(function(response){
+        if (response.ok) {
+        response.json().then(function(data){
+            movieResults(data);
+        })} else {
+            alert("Error: " + response.statusText)
+        }
+    })    
+    .catch(err => {
+	   console.error(err);
+    });
+}
 
 // movieResults Function
 const movieResults = function(data) {
