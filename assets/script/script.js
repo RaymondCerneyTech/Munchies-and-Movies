@@ -14,14 +14,14 @@ $("#searchBtn").on("click", function() {
     movieServiceEntry = $("#service").val();
     movieKeyWordEntry = $("#key-word").val().trim();
     
-    // //if statement to handle search
-    // if (resturauntZipCodeEntry || resturauntCuisineEntry) {
-    //     //resturaunt API handler
-    //     documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
-    // } else if (!resturauntZipCodeEntry || !resturauntCuisineEntry) {
-    //     //movie API handler
-    //     rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
-    // }
+    //if statement to handle search
+    if (resturauntZipCodeEntry || resturauntCuisineEntry) {
+        //resturaunt API handler
+        documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
+    } else if (!resturauntZipCodeEntry || !resturauntCuisineEntry) {
+        //movie API handler
+        rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
+    }
     if (movieGenreEntry || movieServiceEntry || movieKeyWordEntry) {
         //movie API handler
         rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
