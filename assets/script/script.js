@@ -153,7 +153,7 @@ const movieResults = function(data) {
         $("#movie-results").append($("<div id='movie-" + i + "' class='grid grid-rows mt-5 leading-8'></div"));
         $("#movie-" + i).append($("<h3 class='text-2xl' id='movie-name" + i + "'>" + data.results[i].title + "</h3>"));
         $("#movie-" + i).append($("<div class='flex' id='movie-info-" + i + "'></div>"))
-        $("#movie-info-" + i).append($("<img class='movie-resualts-img' src='" + data.results[i].posterURLs[92] + "'/>"));
+        $("#movie-info-" + i).append($("<img class='movie-results-img self-center' src='" + data.results[i].posterURLs[92] + "'/>"));
         $("#movie-info-" + i).append($("<p class='text-lg'>" + data.results[i].overview +"</p>"));
     }
 }

@@ -63,6 +63,7 @@ select{
 }
 
 .movie-results-img{
-  height: 7.7em;
-  width: 5.1em;
+  height: 138px;
+  width: 92px;
+  margin-right: 2%;
 }
