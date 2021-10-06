@@ -49,6 +49,8 @@ h1,h2,h3,h4,h5,h6,label{
 
 /* select styling */
 select{
+  border: solid black 2px;
+  border-radius: .25rem;
   padding: 1%;
   font-family: inherit;
 }
