@@ -19,17 +19,17 @@
     <link href="./assets/css/style.css" rel="stylesheet">
 </head>
 <body >
-    <header class="grid grid-rows p-3 mb-2 mr-72 ml-72">
+    <header class="grid grid-rows p-3 mb-2 md:grid grid-rows p-3 mb-2 h-auto">
         <!-- header -->
         <div class="title-box flex justify-between">
-          <div class="pl-14">
-            <img src="./assets/images/popcorn-reel.png" class="h-64 w-64"/>
+          <div class="md:pl-14">
+            <img src="./assets/images/popcorn-reel.png" class="py-0 md:h-72 w-64 md:py-12"/>
           </div>
-          <div>
-            <h1 class="text-7xl font-bold text-center tracking-widest pt-7">Munchies<br/>&<br>Movies</h1>   
+          <div id="app-title">
+            <h1 class="text-5xl font-bold text-center md:text-7xl md:tracking-widest md:py-28">Munchies & Movies</h1>   
           </div>
-          <div class="pr-14">
-            <img src="./assets/images/smiley.png" class="h-64"/>
+          <div class="md:pr-14">
+            <img src="./assets/images/smiley.png" class="py-0 md:h-72 w-64 md:py-12"/>
           </div>
         </div>
         <!-- page info? -->
@@ -50,7 +50,7 @@
 
             <!-- div to hold description of page -->
             <div class="border-radius">
-                <p id="paragraph" class="text-center text-lg p-3">
+                <p id="paragraph" class="text-center text-lg p-3 mr-12 ml-12 md:m-0">
                     Search for Restaurants in your local area!
                     <br/>
                     Just enter your zip code, the cuisine you
@@ -71,10 +71,10 @@
         </div>
 
         <!-- grid for restaurants and movies -->
-        <div class="flex grid grid-cols-2 w-full p-10 mb-20 justify-items-center ">
+        <div class="grid grid-cols-1 justify-items-center md:grid-cols-2">
             <!-- div to hold restaurants header, form and div to display from
             out put of fetch -->
-            <div class="w-10/12 p-3 h-auto div-search">
+            <div class="w-10/12 p-3 h-auto div-search mb-5 md: mb-0">
                 <!-- header -->
                 <div class="mb-2 rest-movie-boxes">
                     <h3 class="tracking-widest text-center text-4xl font-bold">Restaurants</h3>
