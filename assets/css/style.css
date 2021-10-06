@@ -22,6 +22,7 @@ body{
   background-color: var(--fourth-color);
 }
 
+/* title box styling */
 .title-box {
   color: var(--third-color);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -31,10 +32,7 @@ body{
   background-color: var(--second-color);
 }
 
-input {
-  border-radius: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
+
 
 /* anchor tag styling */
 a{
@@ -69,6 +67,10 @@ input:focus{
   outline: none;
 }
 
+/* header styles */
+h1,h2,h3,h4,h5,h6,label,.search-button{
+  font-family: Bebas Neue, cursive, sans-serif;
+}
 
 /* styling to img that is called with movie web api */
 .movie-results-img{
@@ -102,6 +104,7 @@ input:focus{
   font-weight: bold;
 }
 
+/*intro paragraph style*/
 #paragraph {
   background-color: var(--fifth-color);
   border-radius: 30px;
@@ -109,6 +112,7 @@ input:focus{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+/*search div styling */
 .div-search {
   background-color: var(--second-color);
   border-radius: 30px;
@@ -117,7 +121,7 @@ input:focus{
 }
 
 
-/* styles for all the labels for the buttons */
+/* styles for all the labels for the inputs */
 .labels{
   font-size: 1.5rem;
   line-height: 1.75rem;
@@ -126,42 +130,45 @@ input:focus{
   width: 100%;
 }
 
+/* img sizing from api call for image */
 .movie-results-img{
   height: 138px;
   width: 92px;
   margin-right: 2%;
 }
 
-/* head styles */
-h1,h2,h3,h4,h5,h6,label,.search-button{
-  font-family: Bebas Neue, cursive, sans-serif;
-}
 
+/* welcome text styling */
 #welcome-text {
   font-family: Bebas Neue, cursive, sans-serif;
   font-size: 200%;
 }
 
+/* app title styling */
 #app-title {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* h1 styling */
 h1 {
   height: fit-content;
 }
 
+/* h2styling */
 h3 {
   color: var(--third-color);
 }
 
+/* error message styling */
 .error, .movie-error {
   font-family: Bebas Neue, cursive, sans-serif;
   font-size: x-large;
   color: var(--third-color)
 }
 
+/* media query styling for 768px */
 @media screen and (min-width: 768px) {
   .error {
     margin-top: 50px;

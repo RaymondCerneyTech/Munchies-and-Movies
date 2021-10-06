@@ -9,42 +9,54 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+Display&display=swap" rel="stylesheet">
+
     <!-- tailwind style sheet -->
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css"
     integrity="sha512-5D0ofs3AsWoKsspH9kCWlY7qGxnHvdN/Yz2rTNwD9L271Mno85s+5ERo03qk9SUNtdgOZ4A9t8kRDexkvnWByA=="
     crossorigin="anonymous" 
     referrerpolicy="no-referrer" />
+
     <!-- custom css style sheet -->
     <link href="./assets/css/style.css" rel="stylesheet">
+
 </head>
 <body >
+    <!-- page header with title of page -->
     <header class="grid grid-rows p-3 mb-2 md:grid grid-rows p-3 mb-2 h-auto">
-        <!-- header -->
+        <!-- div for first image -->
         <div class="title-box flex justify-center">
           <div class="md:pr-14">
             <img src="./assets/images/popcorn-reel.png" class="py-0 md:h-72 w-64 md:py-12"/>
           </div>
+          <!-- div for title -->
           <div id="app-title">
             <h1 class="text-5xl font-bold text-center md:text-7xl md:tracking-widest md:py-28">Munchies & Movies</h1>   
           </div>
+          <!-- div for second image -->
           <div class="md:pl-14">
             <img src="./assets/images/smiley.png" class="py-0 md:h-72 w-64 md:py-12"/>
           </div>
         </div>
-        <!-- page info? -->
+
+        <!-- page welcome -->
         <p id="welcome-text" class="text-center font-bold text-xl pt-6 tracking-wide">
             Welcome to Munchies & Movies. 
             <br/>
             The perfect web app for a quick date night
         </p>
+
     </header>
+
+    <!-- page main with search button, description of how to use page and to
+    search forms -->
     <main>
 
-        <!-- search button -->
+        <!-- div that holds description and search button -->
         <div class="grid grid-rows justify-center mb-5">
             <!-- div to hold button to search with -->
             <div class="flex justify-center mb-5">
+                  <!-- search button -->
                 <button class="search-button w-1/3" id="search-button">Search</button>
             </div>
 
@@ -69,17 +81,18 @@
             </div>
         </div>
 
-        <!-- grid for restaurants and movies -->
+        <!-- div with grid for restaurants and movies -->
         <div class="grid grid-cols-1 justify-items-center md:grid-cols-2">
+
             <!-- div to hold restaurants header, form and div to display from
             out put of fetch -->
             <div class="w-10/12 p-3 h-auto div-search mb-5 md:mb-0">
-                <!-- header -->
+                <!-- div for title of header -->
                 <div class="mb-2 rest-movie-boxes">
                     <h3 class="tracking-widest text-center text-4xl font-bold">Restaurants</h3>
                 </div>
 
-                <!-- form -->
+                <!-- div with form field for the restaurant search -->
                 <div class="grid grid-rows">
                     <!-- form for restaurant search -->
                     <form class="grid grid-rows">
@@ -92,7 +105,8 @@
                     </form>
                 </div>
 
-                <!-- display -->
+                <!-- div to display fetched restaurants and also error's or
+                messages if there is a incorrect field in the form -->
                 <div id = "munchies-results" class="grid grid-rows">
 
                 </div>
@@ -102,12 +116,12 @@
              <!-- div to hold movies header, form and div to display from
             out put of fetch -->
             <div class="w-10/12 p-3 h-auto div-search">
-                <!-- header -->
+                <!-- div for title of header -->
                 <div class="mb-2"> 
                     <h3 class="tracking-widest text-center text-4xl font-bold">Movies</h3>
                 </div>
 
-                <!-- form -->
+                <!-- div with form field for the movie search -->
                 <div class="grid grid-rows">
                     <!-- form for movies search -->
                     <form class="grid grid-rows">
@@ -157,10 +171,12 @@
                             <option value="apple">Apple</option>
                             <option value="mubi">Mubi</option>
                         </select>
+
                     </form>
                 </div>
                 
-                <!-- display -->
+                <!-- div to display fetched movies and also error's or
+                messages if there is a incorrect field in the form -->
                 <div id="movie-results" class="grid grid-rows">
                         
                 </div>
@@ -168,6 +184,7 @@
             </div>
            
         </div>
+        <!-- images for the bottom of the page -->
         <div class="flex justify-around mt-5 mb-5">
             <div class="flex justify-start">
                 <div>
@@ -189,8 +206,9 @@
        
     </main>
 
-    <!-- javascript link -->
+    <!-- jquery cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- javascript link -->
     <script src="./assets/script/script.js"></script>
 </body>
 </html>
