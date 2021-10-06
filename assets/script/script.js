@@ -52,24 +52,24 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
             if (response.ok) {
                 // console.log(response)
                 response.json().then(function(data) {
-                    displayResults(data)
+                    munchiesResults(data)
                     // console.log(data)
                 })
             } else {
-                alert("Error: " + response.statusText)
+                $("#munchies-results").append($("<p class='error'>"+ response.statusText +"</p>"))
             }
         })
         .catch(function(error) {
-            alert("Unable to connect to Github");
+            $("#munchies-results").append($("<p class='error'>Unable to connect to GitHub</p>"))
         })
     } 
     // if nothing is entered
     else if (!resturauntZipCodeEntry && !resturauntCuisineEntry) {
-        alert("You must atleast add a zip code!")
+        $("#munchies-results").append($("<p class='error'>You must atleast add a zip code!</p>"))
     } 
     // if no zip code is entered
     else if (!resturauntZipCodeEntry) {
-        alert("You must have a zip code!")
+        $("#munchies-results").append($("<p class='error'>You must have a zip code!</p>"))
     } 
     //if no cuisine is entered
     else if (!resturauntCuisineEntry) {
@@ -84,23 +84,23 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
                 if (response.ok) {
                     // console.log(response)
                     response.json().then(function(data) {
-                        displayResults(data)
+                        munchiesResults(data)
                         // console.log(data)
                     })
                 } else {
-                    alert("Error: " + response.statusText)
+                    $("#munchies-results").append($("<p class='error'>"+ response.statusText +"</p>"))
                 }
             })
             .catch(function(error) {
-                alert("Unable to connect to Github");
+                $("#munchies-results").append($("<p class='error'>Unable to connect to GitHub</p>"))
             })
     }
 }
 
-const displayResults = function(data) {
-    $("#results-display").empty();
+const munchiesResults = function(data) {
+    $("#munchies-results").empty();
     for (let i = 0; i < data.data.length; i++) {
-        $("#results-display").append($("<div id='restaurant-" + i + "' class='grid grid-rows mt-5 text-lg leading-8'></div>"))
+        $("#munchies-results").append($("<div id='restaurant-" + i + "' class='grid grid-rows mt-5 text-lg leading-8'></div>"))
         $("#restaurant-" + i).append($("<h3 id='restaurant-name-" + i + "'>" + data.data[i].restaurant_name + "</h3>"))
         $("#restaurant-" + i).append($("<p>" + data.data[i].address.formatted +"</p>"))
         if (data.data[i].restaurant_website) {

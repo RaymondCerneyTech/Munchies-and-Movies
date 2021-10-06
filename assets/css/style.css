@@ -67,3 +67,7 @@ select{
   width: 92px;
   margin-right: 2%;
 }
+
+.error {
+  font-family: inherit;
+}
