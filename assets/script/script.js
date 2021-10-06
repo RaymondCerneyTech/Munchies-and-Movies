@@ -58,23 +58,23 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
                 })
             } else {
                 $("#munchies-results").empty();
-                $("#munchies-results").append($("<p class='error'>"+ response.statusText +"</p>"))
+                $("#munchies-results").append($("<p class='error text-center mt-3 md:'>"+ response.statusText +"</p>"))
             }
         })
         .catch(function(error) {
             $("#munchies-results").empty();
-            $("#munchies-results").append($("<p class='error'>Unable to connect to GitHub</p>"))
+            $("#munchies-results").append($("<p class='error text-center mt-3 md:'>Unable to connect to GitHub</p>"))
         })
     } 
     // if nothing is entered
     else if (!resturauntZipCodeEntry && !resturauntCuisineEntry) {
         $("#munchies-results").empty();
-        $("#munchies-results").append($("<p class='error'>You must atleast add a zip code!</p>"))
+        $("#munchies-results").append($("<p class='error text-center mt-3 md:'>You must atleast add a zip code!</p>"))
     } 
     // if no zip code is entered
     else if (!resturauntZipCodeEntry) {
         $("#munchies-results").empty();
-        $("#munchies-results").append($("<p class='error'>You must have a zip code!</p>"))
+        $("#munchies-results").append($("<p class='error text-center mt-3 md:'>You must have a zip code!</p>"))
     } 
     //if no cuisine is entered
     else if (!resturauntCuisineEntry) {
@@ -94,12 +94,12 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
                     })
                 } else {
                     $("#munchies-results").empty();
-                    $("#munchies-results").append($("<p class='error'>"+ response.statusText +"</p>"))
+                    $("#munchies-results").append($("<p class='error text-center mt-3 md:'>"+ response.statusText +"</p>"))
                 }
             })
             .catch(function(error) {
                 $("#munchies-results").empty();
-                $("#munchies-results").append($("<p class='error'>Unable to connect to GitHub</p>"))
+                $("#munchies-results").append($("<p class='error text-center mt-3 md:'>Unable to connect to GitHub</p>"))
             })
     }
 }
@@ -153,7 +153,7 @@ const rapidApiRequest = function(movieKeyWordEntry, movieServiceEntry, movieGenr
                 });
             } else {
                 $("#movie-results").empty();
-                $("#movie-results").append($("<p class='error'>" + response.statusText + "</p>"));
+                $("#movie-results").append($("<p class='movie-error text-center mt-3 md:'>" + response.statusText + "</p>"));
             }
         })    
         .catch(err => {
@@ -162,10 +162,10 @@ const rapidApiRequest = function(movieKeyWordEntry, movieServiceEntry, movieGenr
     } else if (!movieGenreEntry && !movieServiceEntry && !movieKeyWordEntry) {
         console.log(movieGenreEntry, movieServiceEntry, movieKeyWordEntry)
         $("#movie-results").empty();
-        $("#movie-results").append($("<p class='error'>You must atleast add a streaming service!</p>"));
+        $("#movie-results").append($("<p class='movie-error text-center mt-3 md:'>You must atleast add a streaming service!</p>"));
     } else if (!movieServiceEntry) {
         $("#movie-results").empty();
-        $("#movie-results").append($("<p class='error'>You must atleast add a streaming service!</p>"));
+        $("#movie-results").append($("<p class='movie-error text-center mt-3 md:'>You must atleast add a streaming service!</p>"));
     } else if (!movieGenreEntry || !movieKeyWordEntry) {
         fetch(streamingApiUrl, {
             "method": "GET",
@@ -183,7 +183,7 @@ const rapidApiRequest = function(movieKeyWordEntry, movieServiceEntry, movieGenr
                 });
             } else {
                 $("#movie-results").empty();
-                $("#movie-results").append($("<p class='error'>" + response.statusText + "</p>"));
+                $("#movie-results").append($("<p class='movie-error text-center mt-3 md:'>" + response.statusText + "</p>"));
             }
         })    
         .catch(err => {
