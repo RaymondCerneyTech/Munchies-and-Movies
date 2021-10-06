@@ -238,22 +238,22 @@ const displayResults = function() {
         movieServiceEntry = previousResults.service
         movieKeyWordEntry = previousResults.keyword
 
-    // if statement to handle search
-    if (resturauntZipCodeEntry || resturauntCuisineEntry) {
-        //resturaunt API handler
-        documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
-    } else if (!resturauntZipCodeEntry || !resturauntCuisineEntry) {
-        //movie API handler
-        rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
-    }
-    if (movieGenreEntry || movieServiceEntry || movieKeyWordEntry) {
-        //movie API handler
-        rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
-    } 
-    else if (!movieGenreEntry || !movieServiceEntry || !movieKeyWordEntry) {
-        //resturaunt API handler
-        documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
-    }
+        // if statement to handle search
+        if (resturauntZipCodeEntry || resturauntCuisineEntry) {
+            //resturaunt API handler
+            documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
+        } else if (!resturauntZipCodeEntry || !resturauntCuisineEntry) {
+            //movie API handler
+            rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
+        }
+        if (movieGenreEntry || movieServiceEntry || movieKeyWordEntry) {
+            //movie API handler
+            rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
+        } 
+        else if (!movieGenreEntry || !movieServiceEntry || !movieKeyWordEntry) {
+            //resturaunt API handler
+            documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
+        }
     }
 }
 console.log(previousResults)
