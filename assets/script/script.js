@@ -1,4 +1,4 @@
-let documenuApiKey = "8545b0df8628258e2380d4b6f5d685a0"
+let documenuApiKey = "6700771495msh120d445d9bd47aep17fe83jsn94392ffe5628"
 let resturauntZipCodeEntry = ""
 let resturauntCuisineEntry = ""
 let movieGenreEntry = ""
@@ -28,7 +28,7 @@ $("#search-button").on("click", function() {
 
     saveResults();
     
-    // if statement to handle search
+    //if statement to handle search
     if (resturauntZipCodeEntry || resturauntCuisineEntry) {
         //resturaunt API handler
         documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
@@ -39,8 +39,7 @@ $("#search-button").on("click", function() {
     if (movieGenreEntry || movieServiceEntry || movieKeyWordEntry) {
         //movie API handler
         rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
-    } 
-    else if (!movieGenreEntry || !movieServiceEntry || !movieKeyWordEntry) {
+    } else if (!movieGenreEntry || !movieServiceEntry || !movieKeyWordEntry) {
         //resturaunt API handler
         documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
     }
@@ -63,9 +62,9 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
 
     fetch(documenuApiUrl)
         .then(function(response) {
-            // console.log(response)
+            console.log(response)
             if (response.ok) {
-                // console.log(response)
+                console.log(response)
                 response.json().then(function(data) {
                     munchiesResults(data)
                     // console.log(data)
@@ -99,9 +98,9 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
     
         fetch(documenuApiUrl)
             .then(function(response) {
-                // console.log(response)
+                console.log(response)
                 if (response.ok) {
-                    // console.log(response)
+                    console.log(response)
                     response.json().then(function(data) {
                         munchiesResults(data)
                         // console.log(data)
