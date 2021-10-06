@@ -1,4 +1,4 @@
-let documenuApiKey = "8545b0df8628258e2380d4b6f5d685a0"
+let documenuApiKey = "6700771495msh120d445d9bd47aep17fe83jsn94392ffe5628"
 let resturauntZipCodeEntry = ""
 let resturauntCuisineEntry = ""
 let movieGenreEntry = ""
@@ -127,27 +127,57 @@ const rapidApiRequest = function(movieKeyWordEntry, movieServiceEntry, movieGenr
         +"&genre=" + movieGenreEntry
         +"&keyword=" + movieKeyWordEntry
 
-    fetch(streamingApiUrl, {
-	    "method": "GET",
-	    "headers": {
-		    "x-rapidapi-host": rapidApiHost,
-		    "x-rapidapi-key": rapidApiKey
-	    }
-    })
+    if (movieKeyWordEntry && movieServiceEntry && movieGenreEntry) {
+        fetch(streamingApiUrl, {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": rapidApiHost,
+                "x-rapidapi-key": rapidApiKey
+            }
+        })
 
-    // handle results of Movie API call
-    .then(function(response){
-        if (response.ok) {
-        response.json().then(function(data){
-            movieResults(data);
-        })} else {
-            alert("Error: " + response.statusText)
-        }
-    })    
-    .catch(err => {
-	   console.error(err);
-    });
-}
+        // handle results of Movie API call
+        .then(function(response){
+            if (response.ok) {
+                response.json().then(function(data){
+                    movieResults(data);
+                });
+            } else {
+                $("#movie-results").append($("<p class='error'>" + response.statusText + "</p>"));
+            }
+        })    
+        .catch(err => {
+            console.error(err);
+        });
+    } else if (!movieGenreEntry && !movieServiceEntry && !movieKeyWordEntry) {
+        console.log(movieGenreEntry, movieServiceEntry, movieKeyWordEntry)
+        $("#movie-results").append($("<p class='error'>You must atleast add a streaming service!</p>"));
+    } else if (!movieServiceEntry) {
+        $("#movie-results").append($("<p class='error'>You must atleast add a streaming service!</p>"));
+    } else if (!movieGenreEntry || !movieKeyWordEntry) {
+        fetch(streamingApiUrl, {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": rapidApiHost,
+                "x-rapidapi-key": rapidApiKey
+            }
+        })
+
+        // handle results of Movie API call
+        .then(function(response){
+            if (response.ok) {
+                response.json().then(function(data){
+                    movieResults(data);
+                });
+            } else {
+                $("#movie-results").append($("<p class='error'>" + response.statusText + "</p>"));
+            }
+        })    
+        .catch(err => {
+        console.error(err);
+        });
+    }
+} 
 
 // movieResults Function
 const movieResults = function(data) {
