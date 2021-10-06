@@ -1,14 +1,39 @@
-/* defaulr page styling */
+/* default page styling */
 *{
   padding: 0;
   margin: 0;
 }
 
+ /* color scheme */
+:root {
+  --first-color: rgba(8, 95, 99);
+  --second-color: rgba(62, 193, 211);
+  --third-color: rgba(34, 24, 28);
+  --fourth-color: rgba(248, 95, 115);
+  --fifth-color: rgba(250, 207, 90);
+}
+
 /* body page styling */
+
 body{
   font-family: Noto Sans Display, sans-serif;
   padding: 0;
   margin: 0;
+  background-color: var(--fourth-color);
+}
+
+.title-box {
+  color: var(--third-color);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  border: 10px solid var(--third-color);
+  background-color: var(--second-color);
+}
+
+input {
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* anchor tag styling */
@@ -17,13 +42,10 @@ a{
   text-decoration: underline ;
 }
 
-/* Header's and Label font styling */
-h1,h2,h3,h4,h5,h6,label{
-  font-family: Bebas Neue, cursive, sans-serif;
-}
-
 /* select styling */
 select{
+  border: solid black 2px;
+  border-radius: .25rem;
   padding: 1%;
   font-family: inherit;
 }
@@ -43,11 +65,18 @@ input{
 }
 
 /* button style for search */
-.btn-search {
-  border: solid black 2px;
-  border-radius: .25rem;
+.search-button {
+  border: solid var(--third-color);
+  background-color: var(--first-color);
+  border-radius: 20px;
   font-size: 2.5rem;
   font-weight: bold;
+}
+
+.search-button:hover {
+  color: white; 
+  background-color: #190236;
+  transition: background-color 0.25s;
 }
 
 /* button style for form */
@@ -58,11 +87,28 @@ input{
   font-weight: bold;
 }
 
-.border-box{
+#paragraph {
+  background-color: var(--fifth-color);
+  border-radius: 30px;
+  border: 5px solid var(--third-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* input style */
+input{
   border: solid black 2px;
   border-radius: .25rem;
-
+  padding: 1%;
 }
+
+
+.div-search {
+  background-color: var(--second-color);
+  border-radius: 30px;
+  border: 5px solid var(--third-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 
 /* styles for all the labels for the buttons */
 .labels{
@@ -73,7 +119,50 @@ input{
   width: 100%;
 }
 
+.movie-results-img{
+  height: 138px;
+  width: 92px;
+  margin-right: 2%;
+}
 
+/* head styles */
+h1,h2,h3,h4,h5,h6,label,.search-button{
+  font-family: Bebas Neue, cursive, sans-serif;
+}
 
+#welcome-text {
+  font-family: Bebas Neue, cursive, sans-serif;
+  font-size: 200%;
+}
 
+#app-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+h1 {
+  height: fit-content;
+}
+
+h3 {
+  color: var(--third-color);
+}
+
+<<<<<<< HEAD
+.error {
+  margin-top: 2%;
+  font-family: inherit;
+=======
+.error, .movie-error {
+  font-family: Bebas Neue, cursive, sans-serif;
+  font-size: x-large;
+  color: var(--third-color)
+>>>>>>> 1ec5118b79587d5b5136c16f47d1c688a318352a
+}
+
+@media screen and (min-width: 768px) {
+  .error {
+    margin-top: 50px;
+  }
+}
