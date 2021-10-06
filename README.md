@@ -42,12 +42,12 @@ it will generate HTML to the page.
   * Javascript and jQuery
 * <strong>Ben Vue</strong>
   * Javascript and jQuery
-* <strong>Benjamin</strong>
-  * Page Styling and tailwind
+* <strong>Benjamin Paulat</strong>
+  * Page Styling and TailwindCSS
 * <strong>Mark Carriveau</strong>
-  * Html and page wireframe with Tailwind
+  * Html and page wireframe with TailwindCSS
 * <strong>Raymond Cerney</strong>
-  * Media Queries with Tailwind
+  * Media Queries with TailwindCSS
 
 ## Contact Info
 
@@ -59,7 +59,7 @@ it will generate HTML to the page.
     * Email: youremail@whatever.com
     * Github: [your username]()
     link your github in (   ) then delete this
-* <strong>Benjamin</strong>
+* <strong>Benjamin Paulat</strong>
     * Email: youremail@whatever.com
     * Github: [your username]()
     link your github in (   ) then delete this
