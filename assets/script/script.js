@@ -4,15 +4,29 @@ let resturauntCuisineEntry = ""
 let movieGenreEntry = ""
 let movieServiceEntry = ""
 let movieKeyWordEntry = ""
+let previousResults = {}
 
 //onclick event for search button
 $("#search-button").on("click", function() {
+    console.log(previousResults)
     resturauntZipCodeEntry = $("#zip-code-entry").val().trim();
+    previousResults.zipcode = resturauntZipCodeEntry
+    console.log(previousResults)
     resturauntCuisineEntry = $("#cuisine-entry").val().trim();
+    previousResults.cuisine = resturauntCuisineEntry
+    console.log(previousResults)
 
     movieGenreEntry = $("#genre").val();
+    previousResults.genre = movieGenreEntry
+    console.log(previousResults)
     movieServiceEntry = $("#service").val();
+    previousResults.service = movieServiceEntry
+    console.log(previousResults)
     movieKeyWordEntry = $("#key-word").val().trim();
+    previousResults.keyword = movieKeyWordEntry
+    console.log(previousResults)
+
+    saveResults();
     
     // if statement to handle search
     if (resturauntZipCodeEntry || resturauntCuisineEntry) {
@@ -160,7 +174,6 @@ const rapidApiRequest = function(movieKeyWordEntry, movieServiceEntry, movieGenr
             console.error(err);
         });
     } else if (!movieGenreEntry && !movieServiceEntry && !movieKeyWordEntry) {
-        console.log(movieGenreEntry, movieServiceEntry, movieKeyWordEntry)
         $("#movie-results").empty();
         $("#movie-results").append($("<p class='movie-error text-center mt-3 md:'>You must atleast add a streaming service!</p>"));
     } else if (!movieServiceEntry) {
@@ -203,3 +216,46 @@ const movieResults = function(data) {
         $("#movie-info-" + i).append($("<p class='text-lg'>" + data.results[i].overview +"</p>"));
     }
 }
+
+const saveResults = function() {
+    localStorage.setItem("previous-search", JSON.stringify(previousResults));
+}
+
+const displayResults = function() {
+    previousResults = JSON.parse(localStorage.getItem("previous-search"))
+    if (!previousResults) {
+        previousResults = {
+            zipcode: "",
+            cuisine: "",
+            genre: "",
+            service: "",
+            keyword: ""
+        }
+    } else {
+        resturauntZipCodeEntry = previousResults.zipcode
+        resturauntCuisineEntry = previousResults.cuisine
+        movieGenreEntry = previousResults.genre
+        movieServiceEntry = previousResults.service
+        movieKeyWordEntry = previousResults.keyword
+
+    // if statement to handle search
+    if (resturauntZipCodeEntry || resturauntCuisineEntry) {
+        //resturaunt API handler
+        documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
+    } else if (!resturauntZipCodeEntry || !resturauntCuisineEntry) {
+        //movie API handler
+        rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
+    }
+    if (movieGenreEntry || movieServiceEntry || movieKeyWordEntry) {
+        //movie API handler
+        rapidApiRequest(movieKeyWordEntry,movieServiceEntry, movieGenreEntry);
+    } 
+    else if (!movieGenreEntry || !movieServiceEntry || !movieKeyWordEntry) {
+        //resturaunt API handler
+        documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
+    }
+    }
+}
+console.log(previousResults)
+
+displayResults();
