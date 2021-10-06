@@ -31,21 +31,13 @@ body{
   background-color: var(--second-color);
 }
 
-.head-style {
-  color: var(--third-color);
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  border-radius: 30px;
-  border: 10px solid var(--third-color);
-  background-color: var(--fifth-color);
-}
-
 input {
   border-radius: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* button style for search */
-.btn-search {
+.search-button {
   border: solid var(--third-color);
   background-color: var(--first-color);
   border-radius: 5px;
@@ -53,7 +45,7 @@ input {
   font-weight: bold;
 }
 
-.btn-search:hover {
+.search-button:hover {
   color: white; 
   background-color: #190236;
   transition: background-color 0.25s;
@@ -74,11 +66,6 @@ input {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.border-box{
-  border: solid black 2px;
-  border-radius: .25rem;
-
-}
 /* input style */
 input{
   border: solid black 2px;
@@ -109,10 +96,15 @@ a{
   text-decoration: underline ;
 }
 
+/* head styles */
 h1,h2,h3,h4,h5,h6,label{
   font-family: Bebas Neue, cursive, sans-serif;
 }
 
 h1 {
   padding-top: 20px;
+}
+
+h3 {
+  color: var(--third-color);
 }

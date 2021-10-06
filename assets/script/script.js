@@ -3,7 +3,7 @@ let resturauntZipCodeEntry = ""
 let resturauntCuisineEntry = ""
 
 //onclick event for search button
-$("#searchBtn").on("click", function() {
+$("#search-button").on("click", function() {
     resturauntZipCodeEntry = $("#zip-code-entry").val().trim();
     resturauntCuisineEntry = $("#cuisine-entry").val().trim();
     documenuRequest(resturauntZipCodeEntry, resturauntCuisineEntry)
