@@ -40,9 +40,9 @@ it will generate HTML to the page.
 ## Page Contributors
 * <strong>Ahmed Sajjad</strong>
   * Javascript and jQuery
-* <strong>Ben Vue</strong>
-  * Javascript and jQuery
 * <strong>Benjamin Paulat</strong>
+  * Javascript and jQuery
+* <strong>Ben Vue</strong>
   * Page Styling and TailwindCSS
 * <strong>Mark Carriveau</strong>
   * Html and page wireframe with TailwindCSS
