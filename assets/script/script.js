@@ -1,4 +1,4 @@
-let documenuApiKey = "6700771495msh120d445d9bd47aep17fe83jsn94392ffe5628"
+let documenuApiKey = "d482529054e684cd6a4f3e18a254eded"
 let resturauntZipCodeEntry = ""
 let resturauntCuisineEntry = ""
 let movieGenreEntry = ""
@@ -8,24 +8,22 @@ let previousResults = {}
 
 //onclick event for search button
 $("#search-button").on("click", function() {
-    console.log(previousResults)
+    //empty div contents
+    $("#munchies-results").empty();
+    $("#movie-results").empty();
+    //set value of variables
     resturauntZipCodeEntry = $("#zip-code-entry").val().trim();
     previousResults.zipcode = resturauntZipCodeEntry
-    console.log(previousResults)
     resturauntCuisineEntry = $("#cuisine-entry").val().trim();
     previousResults.cuisine = resturauntCuisineEntry
-    console.log(previousResults)
 
     movieGenreEntry = $("#genre").val();
     previousResults.genre = movieGenreEntry
-    console.log(previousResults)
     movieServiceEntry = $("#service").val();
     previousResults.service = movieServiceEntry
-    console.log(previousResults)
     movieKeyWordEntry = $("#key-word").val().trim();
     previousResults.keyword = movieKeyWordEntry
-    console.log(previousResults)
-
+    //call saveRestults() to save data in localStorage
     saveResults();
     
     //if statement to handle search
@@ -62,12 +60,9 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
 
     fetch(documenuApiUrl)
         .then(function(response) {
-            console.log(response)
             if (response.ok) {
-                console.log(response)
                 response.json().then(function(data) {
                     munchiesResults(data)
-                    // console.log(data)
                 })
             } else {
                 $("#munchies-results").empty();
@@ -98,12 +93,9 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
     
         fetch(documenuApiUrl)
             .then(function(response) {
-                console.log(response)
                 if (response.ok) {
-                    console.log(response)
                     response.json().then(function(data) {
                         munchiesResults(data)
-                        // console.log(data)
                     })
                 } else {
                     $("#munchies-results").empty();
@@ -138,7 +130,7 @@ const munchiesResults = function(data) {
 // API call for Movies
 
 // Values and Variables
-let rapidApiKey = "5d49265088msh6b983bed1315af1p14dfcbjsnaf5a9469ed5a"
+let rapidApiKey = "46e26cd4acmsh5182eb45f4f0472p1e5c92jsn75dbdcee6f90"
 let rapidApiHost = "streaming-availability.p.rapidapi.com"
 
 // call function for Movie Streaming API
@@ -199,7 +191,7 @@ const rapidApiRequest = function(movieKeyWordEntry, movieServiceEntry, movieGenr
             }
         })    
         .catch(err => {
-        console.error(err);
+            console.error(err);
         });
     }
 } 
@@ -216,10 +208,12 @@ const movieResults = function(data) {
     }
 }
 
+//save the most recently searched criteria to pre existing object
 const saveResults = function() {
     localStorage.setItem("previous-search", JSON.stringify(previousResults));
 }
 
+//if no value exists, leave object key:value pair empty, otherwise update variables with localStorage values and run fetch calls
 const displayResults = function() {
     previousResults = JSON.parse(localStorage.getItem("previous-search"))
     if (!previousResults) {
@@ -255,6 +249,6 @@ const displayResults = function() {
         }
     }
 }
-console.log(previousResults)
 
+//append previously searched results to page
 displayResults();

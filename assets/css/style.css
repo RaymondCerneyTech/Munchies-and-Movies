@@ -22,6 +22,7 @@ body{
   background-color: var(--fourth-color);
 }
 
+/* title box styling */
 .title-box {
   color: var(--third-color);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -31,10 +32,7 @@ body{
   background-color: var(--second-color);
 }
 
-input {
-  border-radius: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
+
 
 /* anchor tag styling */
 a{
@@ -48,6 +46,12 @@ select{
   border-radius: .25rem;
   padding: 1%;
   font-family: inherit;
+  box-shadow: 3px 3px var(--third-color);
+}
+
+select:focus{
+  box-shadow: none;
+  outline: none;
 }
 
 /* input style */
@@ -55,6 +59,17 @@ input{
   border: solid black 2px;
   border-radius: .25rem;
   padding: 1%;
+  box-shadow: 3px 3px var(--third-color);
+}
+
+input:focus{
+  box-shadow: none;
+  outline: none;
+}
+
+/* header styles */
+h1,h2,h3,h4,h5,h6,label,.search-button{
+  font-family: Bebas Neue, cursive, sans-serif;
 }
 
 /* styling to img that is called with movie web api */
@@ -71,12 +86,14 @@ input{
   border-radius: 20px;
   font-size: 2.5rem;
   font-weight: bold;
+  box-shadow: 3px 3px var(--third-color);
 }
 
 .search-button:hover {
   color: white; 
   background-color: #190236;
   transition: background-color 0.25s;
+  box-shadow: none;
 }
 
 /* button style for form */
@@ -87,6 +104,7 @@ input{
   font-weight: bold;
 }
 
+/*intro paragraph style*/
 #paragraph {
   background-color: var(--fifth-color);
   border-radius: 30px;
@@ -94,14 +112,7 @@ input{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* input style */
-input{
-  border: solid black 2px;
-  border-radius: .25rem;
-  padding: 1%;
-}
-
-
+/*search div styling */
 .div-search {
   background-color: var(--second-color);
   border-radius: 30px;
@@ -110,7 +121,7 @@ input{
 }
 
 
-/* styles for all the labels for the buttons */
+/* styles for all the labels for the inputs */
 .labels{
   font-size: 1.5rem;
   line-height: 1.75rem;
@@ -119,42 +130,45 @@ input{
   width: 100%;
 }
 
+/* img sizing from api call for image */
 .movie-results-img{
   height: 138px;
   width: 92px;
   margin-right: 2%;
 }
 
-/* head styles */
-h1,h2,h3,h4,h5,h6,label,.search-button{
-  font-family: Bebas Neue, cursive, sans-serif;
-}
 
+/* welcome text styling */
 #welcome-text {
   font-family: Bebas Neue, cursive, sans-serif;
   font-size: 200%;
 }
 
+/* app title styling */
 #app-title {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* h1 styling */
 h1 {
   height: fit-content;
 }
 
+/* h2styling */
 h3 {
   color: var(--third-color);
 }
 
+/* error message styling */
 .error, .movie-error {
   font-family: Bebas Neue, cursive, sans-serif;
   font-size: x-large;
   color: var(--third-color)
 }
 
+/* media query styling for 768px */
 @media screen and (min-width: 768px) {
   .error {
     margin-top: 50px;
