@@ -8,23 +8,19 @@ let previousResults = {}
 
 //onclick event for search button
 $("#search-button").on("click", function() {
-    console.log(previousResults)
+    $("#munchies-results").empty();
+    $("#movie-results").empty();
     resturauntZipCodeEntry = $("#zip-code-entry").val().trim();
     previousResults.zipcode = resturauntZipCodeEntry
-    console.log(previousResults)
     resturauntCuisineEntry = $("#cuisine-entry").val().trim();
     previousResults.cuisine = resturauntCuisineEntry
-    console.log(previousResults)
 
     movieGenreEntry = $("#genre").val();
     previousResults.genre = movieGenreEntry
-    console.log(previousResults)
     movieServiceEntry = $("#service").val();
     previousResults.service = movieServiceEntry
-    console.log(previousResults)
     movieKeyWordEntry = $("#key-word").val().trim();
     previousResults.keyword = movieKeyWordEntry
-    console.log(previousResults)
 
     saveResults();
     
@@ -62,12 +58,9 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
 
     fetch(documenuApiUrl)
         .then(function(response) {
-            console.log(response)
             if (response.ok) {
-                console.log(response)
                 response.json().then(function(data) {
                     munchiesResults(data)
-                    // console.log(data)
                 })
             } else {
                 $("#munchies-results").empty();
@@ -98,12 +91,9 @@ const documenuRequest = function(resturauntZipCodeEntry, resturauntCuisineEntry)
     
         fetch(documenuApiUrl)
             .then(function(response) {
-                console.log(response)
                 if (response.ok) {
-                    console.log(response)
                     response.json().then(function(data) {
                         munchiesResults(data)
-                        // console.log(data)
                     })
                 } else {
                     $("#munchies-results").empty();
@@ -138,7 +128,7 @@ const munchiesResults = function(data) {
 // API call for Movies
 
 // Values and Variables
-let rapidApiKey = "5d49265088msh6b983bed1315af1p14dfcbjsnaf5a9469ed5a"
+let rapidApiKey = "46e26cd4acmsh5182eb45f4f0472p1e5c92jsn75dbdcee6f90"
 let rapidApiHost = "streaming-availability.p.rapidapi.com"
 
 // call function for Movie Streaming API
@@ -199,7 +189,7 @@ const rapidApiRequest = function(movieKeyWordEntry, movieServiceEntry, movieGenr
             }
         })    
         .catch(err => {
-        console.error(err);
+            console.error(err);
         });
     }
 } 
@@ -255,6 +245,5 @@ const displayResults = function() {
         }
     }
 }
-console.log(previousResults)
 
 displayResults();
