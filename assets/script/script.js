@@ -8,8 +8,10 @@ let previousResults = {}
 
 //onclick event for search button
 $("#search-button").on("click", function() {
+    //empty div contents
     $("#munchies-results").empty();
     $("#movie-results").empty();
+    //set value of variables
     resturauntZipCodeEntry = $("#zip-code-entry").val().trim();
     previousResults.zipcode = resturauntZipCodeEntry
     resturauntCuisineEntry = $("#cuisine-entry").val().trim();
@@ -21,7 +23,7 @@ $("#search-button").on("click", function() {
     previousResults.service = movieServiceEntry
     movieKeyWordEntry = $("#key-word").val().trim();
     previousResults.keyword = movieKeyWordEntry
-
+    //call saveRestults() to save data in localStorage
     saveResults();
     
     //if statement to handle search
@@ -206,10 +208,12 @@ const movieResults = function(data) {
     }
 }
 
+//save the most recently searched criteria to pre existing object
 const saveResults = function() {
     localStorage.setItem("previous-search", JSON.stringify(previousResults));
 }
 
+//if no value exists, leave object key:value pair empty, otherwise update variables with localStorage values and run fetch calls
 const displayResults = function() {
     previousResults = JSON.parse(localStorage.getItem("previous-search"))
     if (!previousResults) {
@@ -246,4 +250,5 @@ const displayResults = function() {
     }
 }
 
+//append previously searched results to page
 displayResults();
