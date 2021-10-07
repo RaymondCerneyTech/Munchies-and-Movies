@@ -1,4 +1,4 @@
-let documenuApiKey = "d482529054e684cd6a4f3e18a254eded"
+let documenuApiKey = "197492e7257dcf71de01b59fa6410078"
 let resturauntZipCodeEntry = ""
 let resturauntCuisineEntry = ""
 let movieGenreEntry = ""

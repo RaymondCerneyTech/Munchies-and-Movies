@@ -37,20 +37,7 @@ it will generate HTML to the page.
 ## Page screenshots
 <img src="./assets/page-screenshots/page-screenshot.png">
 
-## Page Contributors
-* <strong>Ahmed Sajjad</strong>
-  * Javascript and jQuery
-* <strong>Ben Vue</strong>
-  * Javascript and jQuery
-* <strong>Benjamin Paulat</strong>
-  * Page Styling and TailwindCSS
-* <strong>Mark Carriveau</strong>
-  * Html and page wireframe with TailwindCSS
-* <strong>Raymond Cerney</strong>
-  * Media Queries with TailwindCSS
-
-## Contact Info
-
+## Contributers and Contact Info
 * <strong>Ahmed Sajjad</strong>
     * Email: uasajjad11198@outlook.com
     * Github: [Ahmed-Sajjad111](https://github.com/Ahmed-Sajjad111)
