@@ -149,16 +149,10 @@ h3 {
   color: var(--third-color);
 }
 
-<<<<<<< HEAD
-.error {
-  margin-top: 2%;
-  font-family: inherit;
-=======
 .error, .movie-error {
   font-family: Bebas Neue, cursive, sans-serif;
   font-size: x-large;
   color: var(--third-color)
->>>>>>> 1ec5118b79587d5b5136c16f47d1c688a318352a
 }
 
 @media screen and (min-width: 768px) {
