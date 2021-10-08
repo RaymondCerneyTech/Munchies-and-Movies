@@ -8,133 +8,115 @@
     <!-- tailwind style sheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css" integrity="sha512-5D0ofs3AsWoKsspH9kCWlY7qGxnHvdN/Yz2rTNwD9L271Mno85s+5ERo03qk9SUNtdgOZ4A9t8kRDexkvnWByA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- custom css style sheet -->
-<<<<<<< HEAD
     <link href="./assets/css/style.css" rel="stylesheet" />
   </head>
+
   <body class="font-serif">
-    <header class="flex justify-center p-3 mb-2">
       <!-- header -->
-      <h1 class="text-4xl md:text-6xl font-bold">Munchies & Movies</h1>
-      <!-- page info? -->
-      <p></p>
+    <header class="text-center pt-10 pb-10">
+      <h1 class="font-bold pb-10 text-4xl md:text-6xl">
+          Munchies & Movies
+        </h1>
+      <!-- introduction -->
+      <p class="text-xl">
+        Welcome to Munchies & Movies!
+        <br />
+        The perfect web app for a quick date night!
+      </p>
     </header>
-    <main>
-      <!-- grid for restaurants and movies-->
-      <!-- small media = 1 column, medium+ = 2 columns-->
-      <div class="grid grid-cols-1 md:grid-cols-2 mb-10 p-4 justify-items-center">
-        <!-- restaurants -->
-        <div class="grid grid-rows-3 w-3/4 h-3/4">
-          <h3 class="text-center text-3xl">Restaurants</h3>
-          <!-- form for restaurant search -->
-          <label for="zipCode" class="labels">Zip Code</label>
-                        <input type="text" id="" name="zipCode">
-                        <label for="cuisine" class="labels">Cuisine</label>
-                        <input type="text" id="" name="cuisine">
-          <!-- placeholder text maybe have an explanation here -->
-          <p class="text-center text-lg">
-            Search for Restaurants in your local area!
-            <br/>
-            Just enter your zip code, the cuisine you
-            would like to eat at and click the search button
-            below!
-            <br/>
-            Don't forget to search a Movie as well.
-        </p>
-=======
-    <link href="./assets/css/style.css" rel="stylesheet">
-</head>
-<body class="font-serif">
-    <header class="grid grid-rows p-3 mb-2">
-        <!-- header -->
-        <h1 class="text-6xl font-bold text-center">Munchies & Movies</h1>
-        <!-- page info? -->
-        <p class="text-center text-xl">
-            Welcome to Movies and Munchies. 
-            <br/>
-            The perfect web app for a quick date night
-        </p>
-    </header>
-    <main>
-
-        <!-- grid for restaurants and movies -->
-        <div class="grid grid-cols-2 p-4 mb-20 justify-items-center h-1/4">
-            <!-- restaurants -->
-            <div class="grid grid-rows w-3/4 h-full">
-                <div class="mb-5">
-                    <h3 class="text-center text-3xl">Restaurants</h3>
-                </div>
-                <div class="grid grid-rows h-full">
-                    <div class="mb-5"> 
-                        <!-- placeholder text maybe have an explanation here -->
-                        <p class="text-center text-lg">
-                            Search for Restaurants in your local area!
-                            <br/>
-                            Just enter your zip code, the cuisine you
-                            would like to eat at and click the search button
-                            below!
-                            <br/>
-                            Don't forget to search a Movie as well.
-                        </p>
-                    </div>
-                    <!-- form for restaurant search -->
-                    <form class="grid grid-rows">
-                        
-                    </form>
-                </div>
-                
-            </div>
-            <!-- movie selection -->
-            <div class="grid grid-rows w-3/4 h-full">
-                <div class="mb-5"> 
-                    <h3 class="text-center text-3xl">Movies</h3>
-                </div>
-                <div class="grid grid-rows h-full">
-                    <div class="mb-5">
-                        <!-- placeholder text maybe have an explanation here -->
-                        <p class="text-center text-lg">
-                            Search for a Movie genre on all of your favorate
-                            streaming companys!
-                            <br/> 
-                            Just enter a genre and
-                            click the search button below!
-                            <br/>
-                            Don't forget to look for a Restaurant as well.
-                        </p>
-                    </div>
-                    <!-- form for restaurant search -->
-                    <form class="grid grid-rows">
-                        <label for="genre" class="labels">Genre</label>
-                        <input type="text" id="" name="genre">
-                        <label for="" class="labels">placerholder</label>
-                        <input type="text" id="" name="">
-                        <label for="" class="labels">placerholder</label>
-                        <input type="text" id="" name="">
-
-                    </form>
-                </div>
-            </div>
->>>>>>> e854d963f8c4549543ca414593579709707434b9
-        </div>
-        <!-- movie selection -->
-        <div class="grid grid-rows-3 w-3/4 h-3/4">
-          <h3 class="text-center text-3xl">Movies</h3>
-          <!-- form for movie search -->
-          <form class="grid grid-rows-6">
-            <label for="">placerholder</label>
-            <input type="text" id="" name="" class="input" />
-            <label for="">placerholder</label>
-            <input type="text" id="" name="" />
-            <label for="">placerholder</label>
-            <input type="text" id="" name="" />
-          </form>
-          <!-- placeholder text maybe have an explanation here -->
-          <p class="pt-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, suscipit modi ullam, autem dicta nemo sint ducimus blanditiis totam necessitatibus fugiat aut odio! Minima praesentium fugit quidem temporibus repellendus inventore.</p>
-        </div>
-      </div>
-
+    <!-- main content-->
+    <!--everything contained is centered-->
+    <main class="container mx-auto">  
       <!-- search button -->
-      <div class="flex justify-center pb-20">
-        <button class="btn-search bg-blue-300 w-1/3">Search</button>
+      <!-- small media = 1 column, medium+ = 2 columns-->
+      <div class="grid space-x-2 space-y-10 justify-items-center mx-auto grid-cols-1 md:grid-cols-2 md:space-y-0"> 
+        <!-- restaurant selection -->
+        <div class="pb-10 h-36 border-box">
+          <h3 class="text-center pt-1 text-3xl">
+              Restaurants
+          </h3>
+          <!-- form for restaurant search -->
+          <form class="grid grid-cols-2 space-x-2 p-2">
+            <div class="grid">
+              <label for="zipCode" class="labels">Zip Code:</label>
+              
+              <input class="w-28" type="text" id="zip-code-entry" name="zipCode">
+            </div>
+            
+            <div class="grid">
+              <label for="cuisine" class="labels">Cuisine:</label>
+              
+              <input class="w-28" type="text" id="cuisine-entry" name="cuisine">
+            </div>
+          </form>
+        </div>
+        <!-- display restaurant results-->
+          <!--  <div id = "results-display" class="grid"></div> -->
+
+        <!-- movie selection -->
+        <div class="grid border-box p-2">
+          <h3 class="grid text-center text-3xl ">Movies</h3>
+          
+          <!-- form for movie search -->
+          <form class="grid grid-rows-2 space-y-2 pt-3">
+            <div class="grid grid-cols-2 space-x-2 pb-1">
+              <div class="grid">
+                <label for="genre" class="labels">Title:</label>
+                <input class="border-box w-40" type="text" id="key-word" name="search-movie">
+              </div>
+
+              <div class="grid">
+                <label for="" class="labels">Genre: </label>
+                <select id="genre" name="genre" class="border-box w-28">
+                  <option value="" selected>Pick a genre or leave it on this</option>
+                  <option value="1">Biography</option>
+                  <option value="2">Film Noir</option>
+                  <option value="3">Game Show</option>
+                  <option value="4">Musical</option>
+                  <option value="5">Sport</option>
+                  <option value="6">Short Film</option>
+                  <option value="12">Adventure</option>
+                  <option value="14">Fantasy</option>
+                  <option value="16">Animation</option>
+                  <option value="18">Drama</option>
+                  <option value="27">Horror</option>
+                  <option value="28">Action</option>
+                  <option value="35">Comedy</option>
+                  <option value="36">History</option>
+                  <option value="37">Western</option>
+                  <option value="53">Thriller</option>
+                  <option value="80">Crime</option>
+                  <option value="99">Documentary</option>
+                  <option value="878">Sci-Fi</option>
+                  <option value="9648">Mystery</option>
+                  <option value="10749">Romance</option>             
+                </select>
+              </div>
+            </div>
+
+            <div class="grid">
+              <label for="services" class="labels">Service Select:</label>
+              <select id="service" name="services" class="border-box w-32">
+              <option value="" selected>Pick a streaming service</option>
+              <option value="netflix">Netflix</option>
+              <option value="prime">Prime Video</option>
+              <option value="disney">Disney Plus</option>
+              <option value="hulu">Hulu</option>
+              <option value="hbo">HBO</option>
+              <option value="paramount">Paramount Plus</option>
+              <option value="starz">Starz</option>
+              <option value="showtime">Showtime</option>
+              <option value="apple">Apple</option>
+              <option value="mubi">Mubi</option>
+              </select>
+            </div>
+
+>>>>>>> Stashed changes
+          </form>
+        </div>
+
+                <!-- display -->
+        <!-- <div id="movie-results" class="grid grid-rows"></div> -->
       </div>
     </main>
     <!-- javascript link -->
