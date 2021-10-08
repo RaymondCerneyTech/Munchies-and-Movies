@@ -35,7 +35,8 @@ it will generate HTML to the page.
 * [Github Repo](https://github.com/Ahmed-Sajjad111/Project-1)
 
 ## Page screenshots
-<img src="./assets/page-screenshots/page-screenshot.png">
+<img src="./assets/page-screenshots/desktop-page-screenshot.png">
+<img src="./assets/page-screenshots/mobile-page-screenshot.png">
 
 ## Contributers and Contact Info
 * <strong>Ahmed Sajjad</strong>
