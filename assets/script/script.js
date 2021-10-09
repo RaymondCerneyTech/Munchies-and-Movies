@@ -1,4 +1,4 @@
-let documenuApiKey = "197492e7257dcf71de01b59fa6410078"
+let documenuApiKey = "497af3fa73a1e044ccab0f0c53ccb691"
 let resturauntZipCodeEntry = ""
 let resturauntCuisineEntry = ""
 let movieGenreEntry = ""
@@ -130,7 +130,7 @@ const munchiesResults = function(data) {
 // API call for Movies
 
 // Values and Variables
-let rapidApiKey = "46e26cd4acmsh5182eb45f4f0472p1e5c92jsn75dbdcee6f90"
+let rapidApiKey = "5d49265088msh6b983bed1315af1p14dfcbjsnaf5a9469ed5a"
 let rapidApiHost = "streaming-availability.p.rapidapi.com"
 
 // call function for Movie Streaming API
