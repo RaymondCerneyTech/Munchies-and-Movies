@@ -1,22 +1,99 @@
-/* defaulr page styling */
+/* default page styling */
 *{
   padding: 0;
   margin: 0;
 }
 
+ /* color scheme */
+:root {
+  --first-color: rgba(8, 95, 99);
+  --second-color: rgba(62, 193, 211);
+  --third-color: rgba(34, 24, 28);
+  --fourth-color: rgba(248, 95, 115);
+  --fifth-color: rgba(250, 207, 90);
+}
+
 /* body page styling */
+
 body{
   font-family: Noto Sans Display, sans-serif;
   padding: 0;
   margin: 0;
+  background-color: var(--fourth-color);
+}
+
+/* title box styling */
+.title-box {
+  color: var(--third-color);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  border: 10px solid var(--third-color);
+  background-color: var(--second-color);
+}
+
+
+
+/* anchor tag styling */
+a{
+  color: red;
+  text-decoration: underline ;
+}
+
+/* select styling */
+select{
+  border: solid black 2px;
+  border-radius: .25rem;
+  padding: 1%;
+  font-family: inherit;
+  box-shadow: 3px 3px var(--third-color);
+}
+
+select:focus{
+  box-shadow: none;
+  outline: none;
+}
+
+/* input style */
+input{
+  border: solid black 2px;
+  border-radius: .25rem;
+  padding: 1%;
+  box-shadow: 3px 3px var(--third-color);
+}
+
+input:focus{
+  box-shadow: none;
+  outline: none;
+}
+
+/* header styles */
+h1,h2,h3,h4,h5,h6,label,.search-button{
+  font-family: Bebas Neue, cursive, sans-serif;
+}
+
+/* styling to img that is called with movie web api */
+.movie-results-img{
+  height: 138px;
+  width: 92px;
+  margin-right: 2%;
 }
 
 /* button style for search */
-.btn-search {
-  border: solid black 2px;
-  border-radius: .25rem;
+.search-button {
+  border: solid var(--third-color);
+  background-color: var(--first-color);
+  border-radius: 20px;
   font-size: 2.5rem;
   font-weight: bold;
+  box-shadow: 3px 3px var(--third-color);
+}
+
+.search-button:hover {
+  color: white; 
+  background-color: #190236;
+  transition: background-color 0.25s;
+  box-shadow: none;
 }
 
 /* button style for form */
@@ -27,19 +104,24 @@ body{
   font-weight: bold;
 }
 
-.border-box{
-  border: solid black 2px;
-  border-radius: .25rem;
-
-}
-/* input style */
-input{
-  border: solid black 2px;
-  border-radius: .25rem;
-  padding: 1%;
+/*intro paragraph style*/
+#paragraph {
+  background-color: var(--fifth-color);
+  border-radius: 30px;
+  border: 5px solid var(--third-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* styles for all the labels for the buttons */
+/*search div styling */
+.div-search {
+  background-color: var(--second-color);
+  border-radius: 30px;
+  border: 5px solid var(--third-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* styles for all the labels for the inputs */
 .labels{
   font-size: 1.5rem;
   line-height: 1.75rem;
@@ -48,11 +130,47 @@ input{
   width: 100%;
 }
 
-a{
-  color: red;
-  text-decoration: underline ;
+/* img sizing from api call for image */
+.movie-results-img{
+  height: 138px;
+  width: 92px;
+  margin-right: 2%;
 }
 
-h1,h2,h3,h4,h5,h6,label{
+
+/* welcome text styling */
+#welcome-text {
   font-family: Bebas Neue, cursive, sans-serif;
+  font-size: 200%;
+}
+
+/* app title styling */
+#app-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* h1 styling */
+h1 {
+  height: fit-content;
+}
+
+/* h2styling */
+h3 {
+  color: var(--third-color);
+}
+
+/* error message styling */
+.error, .movie-error {
+  font-family: Bebas Neue, cursive, sans-serif;
+  font-size: x-large;
+  color: var(--third-color)
+}
+
+/* media query styling for 768px */
+@media screen and (min-width: 768px) {
+  .error {
+    margin-top: 50px;
+  }
 }

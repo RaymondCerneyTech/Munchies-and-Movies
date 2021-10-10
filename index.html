@@ -9,119 +9,205 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+Display&display=swap" rel="stylesheet">
+
     <!-- tailwind style sheet -->
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css"
     integrity="sha512-5D0ofs3AsWoKsspH9kCWlY7qGxnHvdN/Yz2rTNwD9L271Mno85s+5ERo03qk9SUNtdgOZ4A9t8kRDexkvnWByA=="
     crossorigin="anonymous" 
     referrerpolicy="no-referrer" />
+
     <!-- custom css style sheet -->
     <link href="./assets/css/style.css" rel="stylesheet">
+
 </head>
 <body >
-    <header class="grid grid-rows p-3 mb-2">
-        <!-- header -->
-        <h1 class="text-6xl font-bold text-center">Munchies & Movies</h1>
-        <!-- page info? -->
-        <p class="text-center text-xl">
-            Welcome to Movies and Munchies. 
+    <!-- page header with title of page -->
+    <header class="grid grid-rows p-3 mb-2 md:grid grid-rows p-3 mb-2 h-auto">
+        <!-- div for first image -->
+        <div class="title-box flex justify-center">
+          <div class="md:pr-14">
+            <img src="./assets/images/popcorn-reel.png" class="py-0 md:h-80 w-64 md:py-12"/>
+          </div>
+          <!-- div for title -->
+          <div id="app-title">
+            <h1 class="text-5xl font-bold text-center md:text-7xl md:tracking-widest md:py-28">Munchies & Movies</h1>   
+          </div>
+          <!-- div for second image -->
+          <div class="md:pl-14">
+            <img src="./assets/images/smiley.png" class="py-0 md:h-80 w-64 md:py-12"/>
+          </div>
+        </div>
+
+        <!-- page welcome -->
+        <p id="welcome-text" class="text-center font-bold text-xl pt-6 tracking-wide">
+            Welcome to Munchies & Movies. 
             <br/>
             The perfect web app for a quick date night
         </p>
+
     </header>
+
+    <!-- page main with search button, description of how to use page and to
+    search forms -->
     <main>
 
-        <!-- search button -->
+        <!-- div that holds description and search button -->
         <div class="grid grid-rows justify-center mb-5">
-            <!-- div to hold button to search with -->
-            <div class="flex justify-center mb-5">
-                <button id = "searchBtn" class="btn-search bg-blue-300
-                w-1/3">Search</button>
-            </div>
-
+            
             <!-- div to hold description of page -->
-            <div class="border-box">
-                <p class="text-center text-lg p-3">
-                    Search for Restaurants in your local area!
+            <div class="border-radius">
+                <p id="paragraph" class="text-center text-lg p-3 mr-12 ml-12 md:m-0">
+                    Search for resturaunts in your local area by entering a required
+                    zip code and an optional cuisine type.
                     <br/>
-                    Just enter your zip code, the cuisine you
-                    would like to eat at and click the search button
-                    below!
                     <br/>
-                    Don't forget to search a Movie as well.<br/>
-                    Search for a Movie genre on all of your favorate
-                    streaming companys!
-                    <br/> 
-                    Just enter a genre or movie you like,
-                    click the search button below!
+                    Search for a movie by choosing a required streaming platform and 
+                    an optional genre type and or key-word.
                     <br/>
-                    Or if you want you can also pick or choose to search just
-                    for a movie or just for a restaurant
+                    <br/>
+                    Once you have selected one or both options and have met the required
+                    criteria, click the search to generate results!
+                    <br/>
+                    <br/>
+                    Your last searched results will be saved to the page until you enter a new search
+                    so feel free to come back later!
                 </p>
             </div>
 
+            <!-- div to hold button to search with -->
+            <div class="flex justify-center">
+                <!-- search button -->
+              <button class="search-button w-1/3 md:tracking-wider mt-5" id="search-button">Search</button>
+          </div>
         </div>
 
-        <!-- grid for restaurants and movies -->
-        <div class="flex grid grid-cols-2 w-full p-10 mb-20 justify-items-center ">
+        <!-- div with grid for restaurants and movies -->
+        <div class="grid grid-cols-1 justify-items-center md:grid-cols-2">
+
             <!-- div to hold restaurants header, form and div to display from
             out put of fetch -->
-            <div class="w-10/12 p-3 border-box h-auto">
-                <!-- header -->
-                <div class="mb-2">
-                    <h3 class="text-center text-4xl font-bold">Restaurants</h3>
+            <div class="w-10/12 p-3 h-auto div-search mb-5 md:mb-0">
+                <!-- div for title of header -->
+                <div class="mb-2 rest-movie-boxes">
+                    <h3 class="tracking-widest text-center text-4xl font-bold">Munchies</h3>
                 </div>
 
-                <!-- form -->
+                <!-- div with form field for the restaurant search -->
                 <div class="grid grid-rows">
                     <!-- form for restaurant search -->
                     <form class="grid grid-rows">
+                        <!-- text input for zip code -->
                         <label for="zipCode" class="labels">Zip Code</label>
-                        <input type="text" id="zip-code-entry" name="zipCode">
+                        <input type="text" id="zip-code-entry" name="zipCode" placeholder="12345">
+                        <!-- text input for cuisine -->
                         <label for="cuisine" class="labels">Cuisine</label>
-                        <input type="text" id="cuisine-entry" name="cuisine">
+                        <input type="text" id="cuisine-entry" name="cuisine" placeholder="Italian">
                     </form>
                 </div>
 
-                <!-- display -->
-                <div id = "results-display" class="grid grid-rows">
+                <!-- div to display fetched restaurants and also error's or
+                messages if there is a incorrect field in the form -->
+                <div id = "munchies-results" class="grid grid-rows">
+
                 </div>
 
             </div>
 
              <!-- div to hold movies header, form and div to display from
             out put of fetch -->
-            <div class="w-10/12 p-3 border-box h-auto">
-                <!-- header -->
+            <div class="w-10/12 p-3 h-auto div-search">
+                <!-- div for title of header -->
                 <div class="mb-2"> 
-                    <h3 class="text-center text-4xl font-bold">Movies</h3>
+                    <h3 class="tracking-widest text-center text-4xl font-bold">Movies</h3>
                 </div>
 
-                <!-- form -->
-                <div class="grid grid-rows mb-5">
-        
-                    <!-- form for restaurant search -->
+                <!-- div with form field for the movie search -->
+                <div class="grid grid-rows">
+                    <!-- form for movies search -->
                     <form class="grid grid-rows">
+                        <!-- text input for movie name search -->
                         <label for="genre" class="labels">Search Movie</label>
-                        <input type="text" id="" name="genre">
+                        <input type="text" id="key-word" name="genre" placeholder="Star Wars">
+                        <!-- select for movie genre -->
                         <label for="" class="labels">Genre</label>
-                        <input type="text" id="" name="">
+                        <select id="genre" name="genre">
+                            <option value="" selected>--Pick a genre--</option>
+                            <option value="28">Action</option>
+                            <option value="12">Adventure</option>
+                            <option value="16">Animation</option>
+                            <option value="1">Biography</option>
+                            <option value="35">Comedy</option>
+                            <option value="80">Crime</option>
+                            <option value="99">Documentary</option>
+                            <option value="18">Drama</option>
+                            <option value="14">Fantasy</option>
+                            <option value="2">Film Noir</option>
+                            <option value="3">Game Show</option>
+                            <option value="36">History</option>
+                            <option value="27">Horror</option>
+                            <option value="4">Musical</option>
+                            <option value="9648">Mystery</option>
+                            <option value="10749">Romance</option>
+                            <option value="878">Sci-Fi</option>
+                            <option value="6">Short Film</option>
+                            <option value="5">Sport</option>
+                            <option value="53">Thriller</option>
+                            <option value="37">Western</option>
+                        </select>
+
+                        <!-- select for movie streaming service -->
+                        <label for="services" class="labels">Service Select</label>
+                        <select id="service" name="services" class="border-box">
+                            <option value="" selected>--Pick a streaming service--</option>
+                            <option value="apple">Apple</option>
+                            <option value="disney">Disney Plus</option>
+                            <option value="hbo">HBO</option>
+                            <option value="hulu">Hulu</option>
+                            <option value="mubi">Mubi</option>
+                            <option value="netflix">Netflix</option>
+                            <option value="paramount">Paramount Plus</option>
+                            <option value="prime">Prime Video</option>
+                            <option value="showtime">Showtime</option>
+                            <option value="starz">Starz</option>
+                        </select>
                     </form>
                 </div>
                 
-                <!-- display -->
-                <div class="mb-2">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iure commodi suscipit perspiciatis ex doloremque laudantium, quia accusamus dolorem? Placeat perspiciatis quod distinctio, magni sed nesciunt? Voluptates natus facere sunt.</p>
+                <!-- div to display fetched movies and also error's or
+                messages if there is a incorrect field in the form -->
+                <div id="movie-results" class="grid grid-rows">
+                        
                 </div>
-
+                
             </div>
-
+           
         </div>
-
+        <!-- images for the bottom of the page -->
+        <div class="flex justify-around mt-5 mb-5">
+            <div class="flex justify-start">
+                <div>
+                    <img src="./assets/images/pizza.png" class=" h-32 w-32 md:h-64 md:w-64"/>
+                </div>
+                <div>
+                    <img src="./assets/images/cat-burger.png" class="h-32 w-32 md:h-64 md:w-64"/>
+                </div>
+            </div>
+            <div class="flex justify-end">
+                <div>
+                    <img src="./assets/images/cute-popcorn.png" class="h-32 w-32 md:h-64 md:w-64"/>
+                </div>
+                <div>
+                    <img src="./assets/images/cute-popcorn2.png" class="h-32 w-32 md:h-64 md:w-64"/>
+                </div>
+            </div>
+        </div>
+       
     </main>
 
-    <!-- javascript link -->
+    <!-- jquery cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- javascript link -->
     <script src="./assets/script/script.js"></script>
 </body>
 </html>
