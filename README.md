@@ -31,8 +31,8 @@ it will generate HTML to the page.
     * [Streaming Availability](https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability)
 
 ## GitHub Page and repository
-* [Github Page](https://ahmed-sajjad111.github.io/Project-1/)
-* [Github Repo](https://github.com/Ahmed-Sajjad111/Project-1)
+* [Github Page](https://ahmed-sajjad111.github.io/Munchies-and-Movies/)
+* [Github Repo](https://github.com/Ahmed-Sajjad111/Munchies-and-Movies)
 
 ## Page screenshots
 <img src="./assets/page-screenshots/desktop-page-screenshot.png">
